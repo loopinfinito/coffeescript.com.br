@@ -400,18 +400,19 @@ Expressions
 
     <p>
       <span id="objects_and_arrays" class="bookmark"></span>
-      <b class="header">Objects and Arrays</b>
-      The CoffeeScript literals for objects and arrays look very similar to
-      their JavaScript cousins. When each property is listed on its own line,
-      the commas are optional. Objects may be created using indentation instead
-      of explicit braces, similar to <a href="http://yaml.org">YAML</a>.
+      <b class="header">Objetos e Arrays</b>
+      Os literias de CoffeeScript para objtos e <em>arrays</em> se parecem bastante
+      com seus primos JavaScript. Quando cada propriedade é listada em sua própria
+      linha, as vírgulas são opcionais. Objetos devem ser criados usando indentação
+      em vez de chaves explícitas, similar ao <a href="http://yaml.org">YAML</a>.
     </p>
     <%= code_for('objects_and_arrays', 'song.join(" ... ")') %>
     <p>
-      In JavaScript, you can't use reserved words, like <tt>class</tt>, as properties
-      of an object, without quoting them as strings. CoffeeScript notices reserved words
-      used as keys in objects and quotes them for you, so you don't have to worry
-      about it (say, when using jQuery).
+      Em JavaScript, você não pode usar palavras reservadas, como <tt>class</tt>, como
+      propriedades de um objeto, sem envolvê-las com áspas como <em>strings</em>.
+      CoffeeScript reconhece palavras reservadas usadas como chave (key) em um objeto
+      e coloca áspas nelas para você, então você não precisa se preocupar com isso
+      (por exemplo, quando usando jQuery).
     </p>
     <%= code_for('objects_reserved') %>
 
