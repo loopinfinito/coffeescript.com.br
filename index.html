@@ -283,111 +283,111 @@ sudo bin/cake install</pre>
 
     <h2>
       <span id="usage" class="bookmark"></span>
-      Usage
+      Uso
     </h2>
 
     <p>
-      Once installed, you should have access to the <tt>coffee</tt> command,
-      which can execute scripts, compile <tt>.coffee</tt> files into <tt>.js</tt>,
-      and provide an interactive REPL. The <tt>coffee</tt> command takes the
-      following options:
+      Depois de instalado, você deverá ter acesso ao comando <tt>coffee</tt>,
+      que pode executar scripts, compilar arquivos <tt>.coffee</tt> para <tt>.js</tt>,
+      e fornecer um REPL (Read-Eval-Print-Loop) interativo. O comando <tt>coffee</tt>
+      aceita as seguintes opções:
     </p>
 
     <table>
       <tr>
         <td><code>-c, --compile</code></td>
         <td>
-          Compile a <tt>.coffee</tt> script into a <tt>.js</tt> JavaScript file
-          of the same name.
+          Compila um script <tt>.coffee</tt> para um arquivo JavaScript <tt>.js</tt>
+          com o mesmo nome.
         </td>
       </tr>
       <tr>
         <td width="25%"><code>-i, --interactive</code></td>
         <td>
-          Launch an interactive CoffeeScript session to try short snippets.
-          Identical to calling <tt>coffee</tt> with no arguments.
+          Inicia uma sessão interativa de CoffeeScript para execução de pequenos trechos.
+          Idêntico ao chamar <tt>coffee</tt> sem argumentos.
         </td>
       </tr>
       <tr>
         <td><code>-o, --output [DIR]</code></td>
         <td>
-          Write out all compiled JavaScript files into the specified directory.
-          Use in conjunction with <tt>--compile</tt> or <tt>--watch</tt>.
+          Escreve todos os aquivos JavaScript compilados no diretório especificado.
+          Use em conjunto com <tt>--compile</tt> ou <tt>--watch</tt>.
         </td>
       </tr>
       <tr>
         <td><code>-j, --join [FILE]</code></td>
         <td>
-          Before compiling, concatenate all scripts together in the order they
-          were passed, and write them into the specified file.
-          Useful for building large projects.
+          Antes de compilar, concatena todos os scrips juntos na mesma ordem em que
+          forem passados, e os escreve no arquivo especificdo.
+          Útil na construção de grandes projetos.
         </td>
       </tr>
       <tr>
         <td><code>-w, --watch</code></td>
         <td>
-          Watch files for changes, rerunning the specified command when any
-          file is updated.
+          Observa os arquivos por modificações, reexecutando o comando especificdo
+          quando qualquer arquivo for atualizado.
         </td>
       </tr>
       <tr>
         <td><code>-p, --print</code></td>
         <td>
-          Instead of writing out the JavaScript as a file, print it
-          directly to <b>stdout</b>.
+          Em vez de escrever o JavaScript como um arquivo, imprime
+          diretamente na <b>saída padrão</b> (stdout).
         </td>
       </tr>
       <tr>
         <td><code>-l, --lint</code></td>
         <td>
-          If the <tt>jsl</tt>
+          Se o comando <tt>jsl</tt>
           (<a href="http://www.javascriptlint.com/">JavaScript Lint</a>)
-          command is installed, use it
-          to check the compilation of a CoffeeScript file. (Handy in
-          conjunction with <br /> <tt>--watch</tt>)
+          está instalado, use-o para verificar a compilação de um
+          arquivo CoffeeScript. (Conveniente em conjunto com <br /> <tt>--watch</tt>)
         </td>
       </tr>
       <tr>
         <td><code>-s, --stdio</code></td>
         <td>
-          Pipe in CoffeeScript to STDIN and get back JavaScript over STDOUT.
-          Good for use with processes written in other languages. An example:<br />
+          Passa o CoffeeScript para STDIN e recupera o JavaScript pela STDOUT.
+          Bom para uso com processos escritos em outras linguagens. Por exemplo:<br />
           <tt>cat src/cake.coffee | coffee -sc</tt>
         </td>
       </tr>
       <tr>
         <td><code>-e, --eval</code></td>
         <td>
-          Compile and print a little snippet of CoffeeScript directly from the
-          command line. For example:<br /><tt>coffee -e "console.log num for num in [10..1]"</tt>
+          Compila e imprime um pequeno fragmento de CoffeeScript diretamente da
+          linha de comando. Por exemplo:<br /><tt>coffee -e "console.log num for num in [10..1]"</tt>
         </td>
       </tr>
       <tr>
         <td><code>-r, --require</code></td>
         <td>
-          Load a library before compiling or executing your script. Can be used
-          to hook in to the compiler (to add Growl notifications, for example).
+          Carrega uma biblioteca antes de compilar ou executar seu script. Pode ser
+          usado para ligar algo ao compilador (para adicionar notificações Growl, por exemplo).
         </td>
       </tr>
       <tr>
         <td><code>-b, --bare</code></td>
         <td>
-          Compile the JavaScript without the
-          <a href="#lexical_scope">top-level function safety wrapper</a>.
+          Compila o JavaScript sem a
+          <a href="#lexical_scope">função de segurança de alto nível</a>.
         </td>
       </tr>
       <tr>
         <td><code>-t, --tokens</code></td>
         <td>
-          Instead of parsing the CoffeeScript, just lex it, and print out the
-          token stream: <tt>[IDENTIFIER square] [ASSIGN =] [PARAM_START (]</tt> ...
+          Em vez de realizar a análise sintática (parse) do CoffeeScript, apenas
+          realiza a analise léxica e imprime o fluxo de tokens:
+          <tt>[IDENTIFIER square] [ASSIGN =] [PARAM_START (]</tt> ...
         </td>
       </tr>
       <tr>
         <td><code>-n, --nodes</code></td>
         <td>
-          Instead of compiling the CoffeeScript, just lex and parse it, and print
-          out the parse tree:
+          Em vez de compilar o CoffeeScript, apenas realiza as análises léxica e sintática,
+          e imprime a árvore sintática:
 <pre class="no_bar">
 Expressions
   Assign
@@ -401,41 +401,41 @@ Expressions
       <tr>
         <td><code>--nodejs</code></td>
         <td>
-          The <tt>node</tt> executable has some useful options you can set,
-          such as<br /> <tt>--debug</tt>, <tt>--debug-brk</tt> and <tt>--max-stack-size</tt>. Use this
-          flag to forward options directly to Node.js.
+          O <tt>node</tt> executável tem algumas opções úteis que você pode especificar,
+          como<br /> <tt>--debug</tt>, <tt>--debug-brk</tt> e <tt>--max-stack-size</tt>. Use esta
+          <em>flag</em> para passar as opções diretamente ao Node.js.
         </td>
       </tr>
     </table>
 
     <p>
-      <b>Examples:</b>
+      <b>Exemplos:</b>
     </p>
 
     <ul>
       <li>
-        Compile a directory tree of <tt>.coffee</tt> files in <tt>src</tt> into a parallel
-        tree of <tt>.js</tt> files in <tt>lib</tt>:<br />
+        Compila uma árvore de diretório de arquivos <tt>.coffee</tt> em <tt>src</tt> em
+        uma árvore paralela dos arquivos <tt>.js</tt> em <tt>lib</tt>:<br />
         <tt>coffee --compile --output lib/ src/</tt>
       </li>
       <li>
-        Watch a file for changes, and recompile it every time the file is saved:<br />
+        Observa um arquivo por alterações, e o recompila toda vez que o arquivo é salvo:<br />
         <tt>coffee --watch --compile experimental.coffee</tt>
       </li>
       <li>
-        Concatenate a list of files into a single script:<br />
+        Concatena uma lista de arquivos em um único script:<br />
         <tt>coffee --join project.js --compile src/*.coffee</tt>
       </li>
       <li>
-        Print out the compiled JS from a one-liner:<br />
+        Imprime o JS compilado de uma linha:<br />
         <tt>coffee -bpe "alert i for i in [0..10]"</tt>
       </li>
       <li>
-        All together now, watch and recompile an entire project as you work on it:<br />
+        Tudo junto agora, observa e recompila um projeto inteiro enquanto você trabalha nele:<br />
         <tt>coffee -o lib/ -cw src/</tt>
       </li>
       <li>
-        Start the CoffeeScript REPL (<tt>Ctrl-D</tt> to exit, <tt>Ctrl-V</tt>for multi-line):<br />
+        Inicial o CoffeeScript REPL (<tt>Ctrl-D</tt> para sair, <tt>Ctrl-V</tt> para multi-linha):<br />
         <tt>coffee</tt>
       </li>
     </ul>
