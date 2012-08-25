@@ -627,10 +627,10 @@ log object.<span class="Storage">class</span>
 
     <p>
       <span id="lexical_scope" class="bookmark"></span>
-      <b class="header">Lexical Scoping and Variable Safety</b>
-      The CoffeeScript compiler takes care to make sure that all of your variables
-      are properly declared within lexical scope &mdash; you never need to write
-      <tt>var</tt> yourself.
+      <b class="header">Escopo Léxico e Segurança de Variáveis</b>
+      O compilador CoffeeScript tem o cuidado de se certificar que todas as suas
+      variáveis estão propriamente declaradas dentro de um escopo léxico &mdash;
+      você mesmo nunca precisa escrever <tt>var</tt>.
     </p>
     <div class='code'><pre class="idle">outer <span class="Keyword">=</span> <span class="Number">1</span>
 <span class="FunctionName">changeNumbers </span><span class="Keyword">=</span> <span class="Keyword">-</span><span class="Keyword">&gt;</span>
@@ -661,33 +661,34 @@ changeNumbers = function() {
 inner = changeNumbers();
 ;alert(inner);'>executar: inner</div><br class='clear' /></div>
     <p>
-      Notice how all of the variable declarations have been pushed up to
-      the top of the closest scope, the first time they appear.
-      <b>outer</b> is not redeclared within the inner function, because it's
-      already in scope; <b>inner</b> within the function, on the other hand,
-      should not be able to change the value of the external variable of the same name, and
-      therefore has a declaration of its own.
+      Note como todas as declarações de variável foram colocadas no começo do
+      escopo mais próximo, a primeira vez que elas aparecem.
+      <b>outer</b> não está declarada dentro da função, porque ela já está no
+      escopo; <b>inner</b> dentro da função, por outro lado, não deve ser capaz
+      de mudar o valor da variável externa de mesmo nome, e portanto tem uma
+      própria declaração.
     </p>
     <p>
-      This behavior is effectively identical to Ruby's scope for local variables.
-      Because you don't have direct access to the <tt>var</tt> keyword,
-      it's impossible to shadow an outer variable on purpose, you may only refer
-      to it. So be careful that you're not reusing the name of an external
-      variable accidentally, if you're writing a deeply nested function.
+      Este comportamento é efetivamente idêntico ao escopo de Ruby para variáveis
+      locais. Pelo fato de você não ter acesso direto à palavra-chave <tt>var</tt>,
+      é impossível esconder uma variável externa de propósito, você deve apenas
+      se referir a ela. Então tenha cuidado com o reúso de um nome de variável
+      externa acidentalmente, principalmente se você estiver escrevendo uma função
+      profundamente aninhada.
     </p>
     <p>
-      Although suppressed within this documentation for clarity, all
-      CoffeeScript output is wrapped in an anonymous function:
-      <tt>(function(){ ... })();</tt> This safety wrapper, combined with the
-      automatic generation of the <tt>var</tt> keyword, make it exceedingly difficult
-      to pollute the global namespace by accident.
+      Embora suprimida nesta documentação para maior clareza, toda saída CoffeeScript é
+      empacotada em uma função anônima: <tt>(function(){ ... })();</tt> Este
+      empacotador seguro, combinado com a geração automática da palavra-chave
+      <tt>var</tt>, faz com que seja extremamente difícil de poluir os espaços
+      de nomes (namespace) globais por acidente.
     </p>
     <p>
-      If you'd like to create top-level variables for other scripts to use,
-      attach them as properties on <b>window</b>, or on the <b>exports</b>
-      object in CommonJS. The <b>existential operator</b> (covered below), gives you a
-      reliable way to figure out where to add them; if you're targeting both
-      CommonJS and the browser: <tt>exports ? this</tt>
+      Se você quiser criar variáveis de nível superior para outros scripts usarem,
+      anexe-as como propriedades em <b>window</b>, ou no objeto <b>exports</b> em
+      CommonJS. O <b>operador existencial</b> (mostrado abaixo), fornece a você uma
+      forma confiável de descobrir onde adicioná-las; se você quiser as duas coisas
+      (CommonJS e o navegador): <tt>exports ? this</tt>
     </p>
 
     <p>
