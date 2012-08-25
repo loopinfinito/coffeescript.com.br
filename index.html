@@ -693,17 +693,17 @@ inner = changeNumbers();
 
     <p>
       <span id="conditionals" class="bookmark"></span>
-      <b class="header">If, Else, Unless, and Conditional Assignment</b>
-      <b>If/else</b> statements can be written without the use of parentheses and
-      curly brackets. As with functions and other block expressions,
-      multi-line conditionals are delimited by indentation. There's also a handy
-      postfix form, with the <tt>if</tt> or <tt>unless</tt> at the end.
+      <b class="header">If, Else, Unless, e Atribuição Condicional</b>
+      Declarações <b>If/else</b> podem ser escritas sem o uso de parênteses e chaves.
+      Assim como funções e outras expressões de bloco, condicionais multi-linha são
+      delimitados por indentação. Também existe uma forma pós-fixa, com o <tt>if</tt>
+      ou <tt>unless</tt> ao final.
     </p>
     <p>
-      CoffeeScript can compile <b>if</b> statements into JavaScript expressions,
-      using the ternary operator when possible, and closure wrapping otherwise. There
-      is no explicit ternary statement in CoffeeScript &mdash; you simply use
-      a regular <b>if</b> statement on a single line.
+      CoffeeScript pode compilar declarações <b>if</b> para expressões JavaScript,
+      usando o operador ternário quando possível, e blocos de chaves caso contrário.
+      Não existe declaração ternária explícita em CoffeeScript &mdash; você simplesmente
+      usa uma declaração <b>if</b> normal em uma mesma linha.
     </p>
     <div class='code'><pre class="idle">mood <span class="Keyword">=</span> greatlyImproved <span class="Keyword">if</span> singing
 
@@ -736,10 +736,11 @@ date <span class="Keyword">=</span> friday ? sue : jill;
     <p>
       <span id="splats" class="bookmark"></span>
       <b class="header">Splats...</b>
-      The JavaScript <b>arguments object</b> is a useful way to work with
-      functions that accept variable numbers of arguments. CoffeeScript provides
-      splats <tt>...</tt>, both for function definition as well as invocation,
-      making variable numbers of arguments a little bit more palatable.
+      O <b>objeto de argumentos</b> de JavaScript é uma maneira útil de trabalhar
+      com funções que aceitam um número variado de argumentos. CoffeeScript fornece
+      <em>splats</em> <tt>...</tt>, tanto para definições de função quanto para
+      invocações, fazendo com que o número variável de argumentos seja um pouco
+      mais saboroso.
     </p>
     <div class='code'><pre class="idle">gold <span class="Keyword">=</span> silver <span class="Keyword">=</span> rest <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>unknown<span class="String">&quot;</span></span>
 
