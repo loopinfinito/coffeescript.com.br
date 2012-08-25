@@ -1,17 +1,17 @@
-# Assignment:
+# Atribuições:
 number   = 42
 opposite = true
 
-# Conditions:
+# Condições:
 number = -42 if opposite
 
-# Functions:
+# Funções:
 square = (x) -> x * x
 
 # Arrays:
 list = [1, 2, 3, 4, 5]
 
-# Objects:
+# Objetos:
 math =
   root:   Math.sqrt
   square: square
@@ -21,8 +21,8 @@ math =
 race = (winner, runners...) ->
   print winner, runners
 
-# Existence:
+# Teste de existência:
 alert "I knew it!" if elvis?
 
-# Array comprehensions:
+# Compreensões de Arrays:
 cubes = (math.cube num for num in list)

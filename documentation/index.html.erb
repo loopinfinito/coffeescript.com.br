@@ -14,7 +14,7 @@
     if executable and executable != true
       cs.sub!(/(\S)\s*\Z/m, "\\1\n\nalert #{executable}")
     end
-    run    = executable  == true ? 'run' : "run: #{executable}"
+    run    = executable  == true ? 'executar' : "executar: #{executable}"
     name   = "example#{@counter}"
     script = "<script>window.#{name} = #{cs.to_json}</script>"
     import = show_load ? "<div class='minibutton load' onclick='javascript: loadConsole(#{name});'>load</div>" : ''
@@ -29,7 +29,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>CoffeeScript</title>
-  <link rel="canonical" href="http://coffeescript.org" />
+  <link rel="canonical" href="http://coffeescript.com.br" />
   <link rel="stylesheet" type="text/css" href="documentation/css/docs.css" />
   <link rel="stylesheet" type="text/css" href="documentation/css/idle.css" />
   <link rel="shortcut icon" href="documentation/images/favicon.ico" />
@@ -42,38 +42,38 @@
     <a id="logo" href="#top"> </a>
     <div class="navigation toc">
       <div class="button">
-        Table of Contents
+        Índice Analítico
       </div>
       <div class="contents menu">
-        <a href="#overview">Overview</a>
-        <a href="#installation">Installation</a>
-        <a href="#usage">Usage</a>
-        <a href="#language">Language Reference</a>
-        <a href="#literals">Literals: Functions, Objects and Arrays</a>
-        <a href="#lexical_scope">Lexical Scoping and Variable Safety</a>
-        <a href="#conditionals">If, Else, Unless, and Conditional Assignment</a>
+        <a href="#overview">Visão Geral</a>
+        <a href="#installation">Instalação</a>
+        <a href="#usage">Uso</a>
+        <a href="#language">Referência da Linguagem</a>
+        <a href="#literals">Literais: Funções, Objetos e Arrays</a>
+        <a href="#lexical_scope">Escopo Léxico e Segurança de Variável</a>
+        <a href="#conditionals">If, Else, Unless, e Atribuição Condicional</a>
         <a href="#splats">Splats...</a>
-        <a href="#loops">Loops and Comprehensions</a>
-        <a href="#slices">Array Slicing and Splicing</a>
-        <a href="#expressions">Everything is an Expression</a>
-        <a href="#operators">Operators and Aliases</a>
-        <a href="#classes">Classes, Inheritance, and Super</a>
-        <a href="#destructuring">Destructuring Assignment</a>
-        <a href="#fat_arrow">Function Binding</a>
-        <a href="#embedded">Embedded JavaScript</a>
-        <a href="#switch">Switch and Try/Catch</a>
-        <a href="#comparisons">Chained Comparisons</a>
-        <a href="#strings">String Interpolation, Block Strings, and Block Comments</a>
-        <a href="#regexes">Block Regular Expressions</a>
-        <a href="#cake">Cake, and Cakefiles</a>
-        <a href="#scripts">"text/coffeescript" Script Tags</a>
-        <a href="#resources">Books, Screencasts, Examples and Resources</a>
-        <a href="#changelog">Change Log</a>
+        <a href="#loops">Laços e Compreensões de Listas</a>
+        <a href="#slices">Fatiamento e Substituição de Arrays</a>
+        <a href="#expressions">Tudo é uma Expressão</a>
+        <a href="#operators">Operadores e Aliases</a>
+        <a href="#classes">Classes, Herança, e Superclasses</a>
+        <a href="#destructuring">Múltiplas Atribuições</a>
+        <a href="#fat_arrow">Ligando Funções</a>
+        <a href="#embedded">JavaScript Incorporado</a>
+        <a href="#switch">Switch e Try/Catch</a>
+        <a href="#comparisons">Multi Comparações</a>
+        <a href="#strings">Interpolação, Blocos de Strings, e Blocos de Comentários</a>
+        <a href="#regexes">Blocos de Expressões Regulares</a>
+        <a href="#cake">Cake, e Cakefiles</a>
+        <a href="#scripts">Tags de Script "text/coffeescript"</a>
+        <a href="#resources">Livros, Screencasts, Exemplos e Fontes</a>
+        <a href="#changelog">Log de Mudanças</a>
       </div>
     </div>
     <div class="navigation try">
       <div class="button">
-        Try CoffeeScript
+        Experimente CoffeeScript
         <div class="repl_bridge"></div>
       </div>
       <div class="contents repl_wrapper">
@@ -83,10 +83,10 @@
           <div class="screenshadow bl"></div>
           <div class="screenshadow br"></div>
           <div id="repl_source_wrap">
-            <textarea id="repl_source" rows="100" spellcheck="false">alert "Hello CoffeeScript!"</textarea>
+            <textarea id="repl_source" rows="100" spellcheck="false">alert "Olá CoffeeScript!"</textarea>
           </div>
           <div id="repl_results_wrap"><pre id="repl_results"></pre></div>
-          <div class="minibutton dark run" title="Ctrl-Enter">Run</div>
+          <div class="minibutton dark run" title="Ctrl-Enter">Executar</div>
           <a class="minibutton permalink" id="repl_permalink">Link</a>
           <br class="clear" />
         </div>
@@ -94,20 +94,20 @@
     </div>
     <div class="navigation annotated">
       <div class="button">
-        Annotated Source
+        Código Comentado
       </div>
       <div class="contents menu">
-        <a href="documentation/docs/grammar.html">Grammar Rules &mdash; src/grammar</a>
-        <a href="documentation/docs/lexer.html">Lexing Tokens &mdash; src/lexer</a>
-        <a href="documentation/docs/rewriter.html">The Rewriter &mdash; src/rewriter</a>
-        <a href="documentation/docs/nodes.html">The Syntax Tree &mdash; src/nodes</a>
-        <a href="documentation/docs/scope.html">Lexical Scope &mdash; src/scope</a>
+        <a href="documentation/docs/grammar.html">Regras Gramaticais &mdash; src/grammar</a>
+        <a href="documentation/docs/lexer.html">Tokens Léxicos &mdash; src/lexer</a>
+        <a href="documentation/docs/rewriter.html">O Rewriter &mdash; src/rewriter</a>
+        <a href="documentation/docs/nodes.html">A Árvore de Sintaxe &mdash; src/nodes</a>
+        <a href="documentation/docs/scope.html">Escopo Léxico &mdash; src/scope</a>
         <a href="documentation/docs/helpers.html">Helpers &amp; Utility Functions &mdash; src/helpers</a>
-        <a href="documentation/docs/coffee-script.html">The CoffeeScript Module &mdash; src/coffee-script</a>
+        <a href="documentation/docs/coffee-script.html">O Módulo CoffeeScript &mdash; src/coffee-script</a>
         <a href="documentation/docs/cake.html">Cake &amp; Cakefiles &mdash; src/cake</a>
-        <a href="documentation/docs/command.html">"coffee" Command-Line Utility &mdash; src/command</a>
-        <a href="documentation/docs/optparse.html">Option Parsing &mdash; src/optparse</a>
-        <a href="documentation/docs/repl.html">Interactive REPL &mdash; src/repl</a>
+        <a href="documentation/docs/command.html">Utilitário de Linha de Comando "coffee" &mdash; src/command</a>
+        <a href="documentation/docs/optparse.html">Parser de Opções &mdash; src/optparse</a>
+        <a href="documentation/docs/repl.html">REPL Interativo &mdash; src/repl</a>
       </div>
     </div>
     <div id="error" style="display:none;"></div>
@@ -117,40 +117,38 @@
     <span class="bookmark" id="top"></span>
 
     <p>
-      <b>CoffeeScript is a little language that compiles into JavaScript.</b> Underneath
-      all those awkward braces and semicolons, JavaScript has always had
-      a gorgeous object model at its heart. CoffeeScript is an attempt to expose
-      the good parts of JavaScript in a simple way.
+      <b>CoffeeScript é uma pequena linguagem que compila para JavaScript.</b>
+      Por baixo de todas essas chaves e ponto-e-vírgulas inconvenientes, JavaScript sempre teve
+      um lindo modelo de objeto em seu coração. CoffeeScript é uma tentativa de expor
+      as partes boas de JavaScript de uma maneira simples.
     </p>
 
     <p>
-      The golden rule of CoffeeScript is: <i>"It's just JavaScript"</i>. The code
-      compiles one-to-one into the equivalent JS, and there is
-      no interpretation at runtime. You can use any existing JavaScript library
-      seamlessly from CoffeeScript (and vice-versa). The compiled output is
-      readable and pretty-printed, passes through
-      <a href="http://www.javascriptlint.com/">JavaScript Lint</a>
-      without warnings, will work in every JavaScript runtime, and tends
-      to run as fast or faster than the equivalent handwritten JavaScript.
+      A regra de ouro do CoffeeScript é: "<i>É apenas JavaScript</i>". O código
+      compila para um JS equivalente, e não há uma interpretação em tempo de execução (runtime).
+      Você pode usar qualquer biblioteca JavaScript existente sem problemas de CoffeeScript (e vice-versa).
+      A saída compilada é legível e bem impressa, passa pelo <a href="http://www.javascriptlint.com/">JavaScript Lint</a>
+      sem advertências, funcionará em qualquer <em>runtime</em> JavaScript, e tende a
+      executar tão ou mais rápido que o JavaScript equivalente escrito a mão.
     </p>
 
     <p>
-      <b>Latest Version:</b>
+      <b>Última Versão:</b>
       <a href="http://github.com/jashkenas/coffee-script/tarball/1.3.3">1.3.3</a>
     </p>
 
     <h2>
       <span id="overview" class="bookmark"></span>
-      Overview
+      Visão Geral
     </h2>
 
-    <p><i>CoffeeScript on the left, compiled JavaScript output on the right.</i></p>
+    <p><i>CoffeeScript à esquerda, saída compilada de JavaScript à direita.</i></p>
 
     <%= code_for('overview', 'cubes', false) %>
 
     <h2>
       <span id="installation" class="bookmark"></span>
-      Installation
+      Instalação
     </h2>
 
     <p>

@@ -6,7 +6,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>CoffeeScript</title>
-  <link rel="canonical" href="http://coffeescript.org" />
+  <link rel="canonical" href="http://coffeescript.com.br" />
   <link rel="stylesheet" type="text/css" href="documentation/css/docs.css" />
   <link rel="stylesheet" type="text/css" href="documentation/css/idle.css" />
   <link rel="shortcut icon" href="documentation/images/favicon.ico" />
@@ -19,38 +19,38 @@
     <a id="logo" href="#top"> </a>
     <div class="navigation toc">
       <div class="button">
-        Table of Contents
+        Índice Analítico
       </div>
       <div class="contents menu">
-        <a href="#overview">Overview</a>
-        <a href="#installation">Installation</a>
-        <a href="#usage">Usage</a>
-        <a href="#language">Language Reference</a>
-        <a href="#literals">Literals: Functions, Objects and Arrays</a>
-        <a href="#lexical_scope">Lexical Scoping and Variable Safety</a>
-        <a href="#conditionals">If, Else, Unless, and Conditional Assignment</a>
+        <a href="#overview">Visão Geral</a>
+        <a href="#installation">Instalação</a>
+        <a href="#usage">Uso</a>
+        <a href="#language">Referência da Linguagem</a>
+        <a href="#literals">Literais: Funções, Objetos e Arrays</a>
+        <a href="#lexical_scope">Escopo Léxico e Segurança de Variável</a>
+        <a href="#conditionals">If, Else, Unless, e Atribuição Condicional</a>
         <a href="#splats">Splats...</a>
-        <a href="#loops">Loops and Comprehensions</a>
-        <a href="#slices">Array Slicing and Splicing</a>
-        <a href="#expressions">Everything is an Expression</a>
-        <a href="#operators">Operators and Aliases</a>
-        <a href="#classes">Classes, Inheritance, and Super</a>
-        <a href="#destructuring">Destructuring Assignment</a>
-        <a href="#fat_arrow">Function Binding</a>
-        <a href="#embedded">Embedded JavaScript</a>
-        <a href="#switch">Switch and Try/Catch</a>
-        <a href="#comparisons">Chained Comparisons</a>
-        <a href="#strings">String Interpolation, Block Strings, and Block Comments</a>
-        <a href="#regexes">Block Regular Expressions</a>
-        <a href="#cake">Cake, and Cakefiles</a>
-        <a href="#scripts">"text/coffeescript" Script Tags</a>
-        <a href="#resources">Books, Screencasts, Examples and Resources</a>
-        <a href="#changelog">Change Log</a>
+        <a href="#loops">Laços e Compreensões de Listas</a>
+        <a href="#slices">Fatiamento e Substituição de Arrays</a>
+        <a href="#expressions">Tudo é uma Expressão</a>
+        <a href="#operators">Operadores e Aliases</a>
+        <a href="#classes">Classes, Herança, e Superclasses</a>
+        <a href="#destructuring">Múltiplas Atribuições</a>
+        <a href="#fat_arrow">Ligando Funções</a>
+        <a href="#embedded">JavaScript Incorporado</a>
+        <a href="#switch">Switch e Try/Catch</a>
+        <a href="#comparisons">Multi Comparações</a>
+        <a href="#strings">Interpolação, Blocos de Strings, e Blocos de Comentários</a>
+        <a href="#regexes">Blocos de Expressões Regulares</a>
+        <a href="#cake">Cake, e Cakefiles</a>
+        <a href="#scripts">Tags de Script "text/coffeescript"</a>
+        <a href="#resources">Livros, Screencasts, Exemplos e Fontes</a>
+        <a href="#changelog">Log de Mudanças</a>
       </div>
     </div>
     <div class="navigation try">
       <div class="button">
-        Try CoffeeScript
+        Experimente CoffeeScript
         <div class="repl_bridge"></div>
       </div>
       <div class="contents repl_wrapper">
@@ -60,10 +60,10 @@
           <div class="screenshadow bl"></div>
           <div class="screenshadow br"></div>
           <div id="repl_source_wrap">
-            <textarea id="repl_source" rows="100" spellcheck="false">alert "Hello CoffeeScript!"</textarea>
+            <textarea id="repl_source" rows="100" spellcheck="false">alert "Olá CoffeeScript!"</textarea>
           </div>
           <div id="repl_results_wrap"><pre id="repl_results"></pre></div>
-          <div class="minibutton dark run" title="Ctrl-Enter">Run</div>
+          <div class="minibutton dark run" title="Ctrl-Enter">Executar</div>
           <a class="minibutton permalink" id="repl_permalink">Link</a>
           <br class="clear" />
         </div>
@@ -71,20 +71,20 @@
     </div>
     <div class="navigation annotated">
       <div class="button">
-        Annotated Source
+        Código Comentado
       </div>
       <div class="contents menu">
-        <a href="documentation/docs/grammar.html">Grammar Rules &mdash; src/grammar</a>
-        <a href="documentation/docs/lexer.html">Lexing Tokens &mdash; src/lexer</a>
-        <a href="documentation/docs/rewriter.html">The Rewriter &mdash; src/rewriter</a>
-        <a href="documentation/docs/nodes.html">The Syntax Tree &mdash; src/nodes</a>
-        <a href="documentation/docs/scope.html">Lexical Scope &mdash; src/scope</a>
+        <a href="documentation/docs/grammar.html">Regras Gramaticais &mdash; src/grammar</a>
+        <a href="documentation/docs/lexer.html">Tokens Léxicos &mdash; src/lexer</a>
+        <a href="documentation/docs/rewriter.html">O Rewriter &mdash; src/rewriter</a>
+        <a href="documentation/docs/nodes.html">A Árvore de Sintaxe &mdash; src/nodes</a>
+        <a href="documentation/docs/scope.html">Escopo Léxico &mdash; src/scope</a>
         <a href="documentation/docs/helpers.html">Helpers &amp; Utility Functions &mdash; src/helpers</a>
-        <a href="documentation/docs/coffee-script.html">The CoffeeScript Module &mdash; src/coffee-script</a>
+        <a href="documentation/docs/coffee-script.html">O Módulo CoffeeScript &mdash; src/coffee-script</a>
         <a href="documentation/docs/cake.html">Cake &amp; Cakefiles &mdash; src/cake</a>
-        <a href="documentation/docs/command.html">"coffee" Command-Line Utility &mdash; src/command</a>
-        <a href="documentation/docs/optparse.html">Option Parsing &mdash; src/optparse</a>
-        <a href="documentation/docs/repl.html">Interactive REPL &mdash; src/repl</a>
+        <a href="documentation/docs/command.html">Utilitário de Linha de Comando "coffee" &mdash; src/command</a>
+        <a href="documentation/docs/optparse.html">Parser de Opções &mdash; src/optparse</a>
+        <a href="documentation/docs/repl.html">REPL Interativo &mdash; src/repl</a>
       </div>
     </div>
     <div id="error" style="display:none;"></div>
@@ -94,49 +94,47 @@
     <span class="bookmark" id="top"></span>
 
     <p>
-      <b>CoffeeScript is a little language that compiles into JavaScript.</b> Underneath
-      all those awkward braces and semicolons, JavaScript has always had
-      a gorgeous object model at its heart. CoffeeScript is an attempt to expose
-      the good parts of JavaScript in a simple way.
+      <b>CoffeeScript é uma pequena linguagem que compila para JavaScript.</b>
+      Por baixo de todas essas chaves e ponto-e-vírgulas inconvenientes, JavaScript sempre teve
+      um lindo modelo de objeto em seu coração. CoffeeScript é uma tentativa de expor
+      as partes boas de JavaScript de uma maneira simples.
     </p>
 
     <p>
-      The golden rule of CoffeeScript is: <i>"It's just JavaScript"</i>. The code
-      compiles one-to-one into the equivalent JS, and there is
-      no interpretation at runtime. You can use any existing JavaScript library
-      seamlessly from CoffeeScript (and vice-versa). The compiled output is
-      readable and pretty-printed, passes through
-      <a href="http://www.javascriptlint.com/">JavaScript Lint</a>
-      without warnings, will work in every JavaScript runtime, and tends
-      to run as fast or faster than the equivalent handwritten JavaScript.
+      A regra de ouro do CoffeeScript é: "<i>É apenas JavaScript</i>". O código
+      compila para um JS equivalente, e não há uma interpretação em tempo de execução (runtime).
+      Você pode usar qualquer biblioteca JavaScript existente sem problemas de CoffeeScript (e vice-versa).
+      A saída compilada é legível e bem impressa, passa pelo <a href="http://www.javascriptlint.com/">JavaScript Lint</a>
+      sem advertências, funcionará em qualquer <em>runtime</em> JavaScript, e tende a
+      executar tão ou mais rápido que o JavaScript equivalente escrito a mão.
     </p>
 
     <p>
-      <b>Latest Version:</b>
+      <b>Última Versão:</b>
       <a href="http://github.com/jashkenas/coffee-script/tarball/1.3.3">1.3.3</a>
     </p>
 
     <h2>
       <span id="overview" class="bookmark"></span>
-      Overview
+      Visão Geral
     </h2>
 
-    <p><i>CoffeeScript on the left, compiled JavaScript output on the right.</i></p>
+    <p><i>CoffeeScript à esquerda, saída compilada de JavaScript à direita.</i></p>
 
-    <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> Assignment:</span>
+    <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> Atribuições:</span>
 number   <span class="Keyword">=</span> <span class="Number">42</span>
 opposite <span class="Keyword">=</span> <span class="BuiltInConstant">true</span>
 
-<span class="Comment"><span class="Comment">#</span> Conditions:</span>
+<span class="Comment"><span class="Comment">#</span> Condições:</span>
 number <span class="Keyword">=</span> <span class="Keyword">-</span><span class="Number">42</span> <span class="Keyword">if</span> opposite
 
-<span class="Comment"><span class="Comment">#</span> Functions:</span>
+<span class="Comment"><span class="Comment">#</span> Funções:</span>
 <span class="FunctionName">square </span><span class="Keyword">=</span> <span class="FunctionArgument">(x)</span> <span class="Storage">-&gt;</span> x <span class="Keyword">*</span> x
 
 <span class="Comment"><span class="Comment">#</span> Arrays:</span>
 list <span class="Keyword">=</span> [<span class="Number">1</span>, <span class="Number">2</span>, <span class="Number">3</span>, <span class="Number">4</span>, <span class="Number">5</span>]
 
-<span class="Comment"><span class="Comment">#</span> Objects:</span>
+<span class="Comment"><span class="Comment">#</span> Objetos:</span>
 math <span class="Keyword">=</span>
   root:   Math.sqrt
   square: square
@@ -146,10 +144,10 @@ math <span class="Keyword">=</span>
 <span class="FunctionName">race </span><span class="Keyword">=</span> <span class="FunctionArgument">(winner, runners...)</span> <span class="Storage">-&gt;</span>
   print winner, runners
 
-<span class="Comment"><span class="Comment">#</span> Existence:</span>
+<span class="Comment"><span class="Comment">#</span> Teste de existência:</span>
 alert <span class="String"><span class="String">&quot;</span>I knew it!<span class="String">&quot;</span></span> <span class="Keyword">if</span> elvis<span class="Keyword">?</span>
 
-<span class="Comment"><span class="Comment">#</span> Array comprehensions:</span>
+<span class="Comment"><span class="Comment">#</span> Compreensões de Arrays:</span>
 cubes <span class="Keyword">=</span> (math.cube num <span class="Keyword">for</span> num <span class="Keyword">in</span> list)
 </pre><pre class="idle"><span class="Storage">var</span> cubes, list, math, num, number, opposite, race, square,
   __slice <span class="Keyword">=</span> [].slice;
@@ -195,7 +193,7 @@ cubes <span class="Keyword">=</span> (<span class="Storage">function</span>() {
   }
   <span class="Keyword">return</span> _results;
 })();
-</pre><script>window.example1 = "# Assignment:\nnumber   = 42\nopposite = true\n\n# Conditions:\nnumber = -42 if opposite\n\n# Functions:\nsquare = (x) -> x * x\n\n# Arrays:\nlist = [1, 2, 3, 4, 5]\n\n# Objects:\nmath =\n  root:   Math.sqrt\n  square: square\n  cube:   (x) -> x * square x\n\n# Splats:\nrace = (winner, runners...) ->\n  print winner, runners\n\n# Existence:\nalert \"I knew it!\" if elvis?\n\n# Array comprehensions:\ncubes = (math.cube num for num in list)\n\nalert cubes"</script><div class='minibutton ok' onclick='javascript: var cubes, list, math, num, number, opposite, race, square,
+</pre><script>window.example1 = "# Atribuições:\nnumber   = 42\nopposite = true\n\n# Condições:\nnumber = -42 if opposite\n\n# Funções:\nsquare = (x) -> x * x\n\n# Arrays:\nlist = [1, 2, 3, 4, 5]\n\n# Objetos:\nmath =\n  root:   Math.sqrt\n  square: square\n  cube:   (x) -> x * square x\n\n# Splats:\nrace = (winner, runners...) ->\n  print winner, runners\n\n# Teste de existência:\nalert \"I knew it!\" if elvis?\n\n# Compreensões de Arrays:\ncubes = (math.cube num for num in list)\n\nalert cubes"</script><div class='minibutton ok' onclick='javascript: var cubes, list, math, num, number, opposite, race, square,
   __slice = [].slice;
 
 number = 42;
@@ -239,11 +237,11 @@ cubes = (function() {
   }
   return _results;
 })();
-;alert(cubes);'>run: cubes</div><br class='clear' /></div>
+;alert(cubes);'>executar: cubes</div><br class='clear' /></div>
 
     <h2>
       <span id="installation" class="bookmark"></span>
-      Installation
+      Instalação
     </h2>
 
     <p>
@@ -508,7 +506,7 @@ square = function(x) {
 cube = function(x) {
   return square(x) * x;
 };
-;alert(cube(5));'>run: cube(5)</div><br class='clear' /></div>
+;alert(cube(5));'>executar: cube(5)</div><br class='clear' /></div>
     <p>
       Functions may also have default values for arguments. Override the default
       value by passing a non-null argument.
@@ -537,7 +535,7 @@ fill = function(container, liquid) {
   }
   return "Filling the " + container + " with " + liquid + "...";
 };
-;alert(fill("cup"));'>run: fill("cup")</div><br class='clear' /></div>
+;alert(fill("cup"));'>executar: fill("cup")</div><br class='clear' /></div>
 
     <p>
       <span id="objects_and_arrays" class="bookmark"></span>
@@ -608,7 +606,7 @@ kids = {
     age: 9
   }
 };
-;alert(song.join(" ... "));'>run: song.join(" ... ")</div><br class='clear' /></div>
+;alert(song.join(" ... "));'>executar: song.join(" ... ")</div><br class='clear' /></div>
     <p>
       In JavaScript, you can't use reserved words, like <tt>class</tt>, as properties
       of an object, without quoting them as strings. CoffeeScript notices reserved words
@@ -662,7 +660,7 @@ changeNumbers = function() {
 };
 
 inner = changeNumbers();
-;alert(inner);'>run: inner</div><br class='clear' /></div>
+;alert(inner);'>executar: inner</div><br class='clear' /></div>
     <p>
       Notice how all of the variable declarations have been pushed up to
       the top of the closest scope, the first time they appear.
@@ -814,7 +812,7 @@ alert("Gold: " + gold);
 alert("Silver: " + silver);
 
 alert("The Field: " + rest);
-;'>run</div><br class='clear' /></div>
+;'>executar</div><br class='clear' /></div>
 
     <p>
       <span id="loops" class="bookmark"></span>
@@ -889,7 +887,7 @@ countdown = (function() {
   }
   return _results;
 })();
-;alert(countdown);'>run: countdown</div><br class='clear' /></div>
+;alert(countdown);'>executar: countdown</div><br class='clear' /></div>
     <p>
       Note how because we are assigning the value of the comprehensions to a
       variable in the example above, CoffeeScript is collecting the result of
@@ -947,7 +945,7 @@ ages = (function() {
   }
   return _results;
 })();
-;alert(ages.join(", "));'>run: ages.join(", ")</div><br class='clear' /></div>
+;alert(ages.join(", "));'>executar: ages.join(", ")</div><br class='clear' /></div>
     <p>
       If you would like to iterate over just the keys that are defined on the
       object itself, by adding a <tt>hasOwnProperty</tt>
@@ -1012,7 +1010,7 @@ lyrics = (function() {
   }
   return _results;
 })();
-;alert(lyrics.join("\n"));'>run: lyrics.join("\n")</div><br class='clear' /></div>
+;alert(lyrics.join("\n"));'>executar: lyrics.join("\n")</div><br class='clear' /></div>
     <p>
       For readability, the <b>until</b> keyword is equivalent to <tt>while not</tt>,
       and the <b>loop</b> keyword is equivalent to <tt>while true</tt>.
@@ -1081,7 +1079,7 @@ middle = numbers.slice(3, 6);
 end = numbers.slice(6);
 
 copy = numbers.slice(0);
-;alert(middle);'>run: middle</div><br class='clear' /></div>
+;alert(middle);'>executar: middle</div><br class='clear' /></div>
     <p>
       The same syntax can be used with assignment to replace a segment of an array
       with new values, splicing it.
@@ -1103,7 +1101,7 @@ numbers <span class="Keyword">=</span> [<span class="Number">0</span>, <span cla
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 [].splice.apply(numbers, [3, 4].concat(_ref = [-3, -4, -5, -6])), _ref;
-;alert(numbers);'>run: numbers</div><br class='clear' /></div>
+;alert(numbers);'>executar: numbers</div><br class='clear' /></div>
     <p>
       Note that JavaScript strings are immutable, and can't be spliced.
     </p>
@@ -1160,7 +1158,7 @@ grade = function(student) {
 };
 
 eldest = 24 > 21 ? "Liz" : "Ike";
-;alert(eldest);'>run: eldest</div><br class='clear' /></div>
+;alert(eldest);'>executar: eldest</div><br class='clear' /></div>
     <p>
       Even though functions will always return their final value, it's both possible
       and encouraged to return early from a function body writing out the explicit
@@ -1179,7 +1177,7 @@ six <span class="Keyword">=</span> (one <span class="Keyword">=</span> <span cla
 </pre><script>window.example17 = "six = (one = 1) + (two = 2) + (three = 3)\n\nalert six"</script><div class='minibutton load' onclick='javascript: loadConsole(example17);'>load</div><div class='minibutton ok' onclick='javascript: var one, six, three, two;
 
 six = (one = 1) + (two = 2) + (three = 3);
-;alert(six);'>run: six</div><br class='clear' /></div>
+;alert(six);'>executar: six</div><br class='clear' /></div>
     <p>
       Things that would otherwise be statements in JavaScript, when used
       as part of an expression in CoffeeScript, are converted into expressions
@@ -1209,7 +1207,7 @@ globals = ((function() {
   }
   return _results;
 })()).slice(0, 10);
-;alert(globals);'>run: globals</div><br class='clear' /></div>
+;alert(globals);'>executar: globals</div><br class='clear' /></div>
     <p>
       As well as silly things, like passing a <b>try/catch</b> statement directly
       into a function call:
@@ -1237,7 +1235,7 @@ alert((function() {
     return "And the error is ... " + error;
   }
 })());
-;'>run</div><br class='clear' /></div>
+;'>executar</div><br class='clear' /></div>
     <p>
       There are a handful of statements in JavaScript that can't be meaningfully
       converted into expressions, namely <tt>break</tt>, <tt>continue</tt>,
@@ -1387,7 +1385,7 @@ if (speed == null) {
 }
 
 footprints = typeof yeti !== "undefined" && yeti !== null ? yeti : "bear";
-;alert(footprints);'>run: footprints</div><br class='clear' /></div>
+;alert(footprints);'>executar: footprints</div><br class='clear' /></div>
     <p>
       The accessor variant of the existential operator <tt>?.</tt> can be used to soak
       up null references in a chain of properties. Use it instead
@@ -1576,7 +1574,7 @@ tom = new Horse("Tommy the Palomino");
 sam.move();
 
 tom.move();
-;'>run</div><br class='clear' /></div>
+;'>executar</div><br class='clear' /></div>
     <p>
       If structuring your prototypes classically isn't your cup of tea, CoffeeScript
       provides a couple of lower-level conveniences. The <tt>extends</tt> operator
@@ -1596,7 +1594,7 @@ tom.move();
 String.prototype.dasherize = function() {
   return this.replace(/_/g, "-");
 };
-;alert("one_two".dasherize());'>run: "one_two".dasherize()</div><br class='clear' /></div>
+;alert("one_two".dasherize());'>executar: "one_two".dasherize()</div><br class='clear' /></div>
     <p>
       Finally, class definitions are blocks of executable code, which make for interesting
       metaprogramming possibilities. Because in the context of a class definition,
@@ -1639,7 +1637,7 @@ theBait = 1000;
 theSwitch = 0;
 
 _ref = [theSwitch, theBait], theBait = _ref[0], theSwitch = _ref[1];
-;alert(theBait);'>run: theBait</div><br class='clear' /></div>
+;alert(theBait);'>executar: theBait</div><br class='clear' /></div>
     <p>
       But it's also helpful for dealing with functions that return multiple
       values.
@@ -1667,7 +1665,7 @@ weatherReport = function(location) {
 };
 
 _ref = weatherReport("Berkeley, CA"), city = _ref[0], temp = _ref[1], forecast = _ref[2];
-;alert(forecast);'>run: forecast</div><br class='clear' /></div>
+;alert(forecast);'>executar: forecast</div><br class='clear' /></div>
     <p>
       Destructuring assignment can be used with any depth of array and object nesting,
       to help pull out deeply nested properties.
@@ -1710,7 +1708,7 @@ futurists = {
 };
 
 _ref = futurists.poet, name = _ref.name, (_ref1 = _ref.address, street = _ref1[0], city = _ref1[1]);
-;alert(name + " - " + street);'>run: name + " - " + street</div><br class='clear' /></div>
+;alert(name + " - " + street);'>executar: name + " - " + street</div><br class='clear' /></div>
     <p>
       Destructuring assignment can even be combined with splats.
     </p>
@@ -1735,7 +1733,7 @@ _ref <span class="Keyword">=</span> tag.<span class="LibraryFunction">split</spa
 tag = "<impossible>";
 
 _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call(_ref, 1, _i = _ref.length - 1) : (_i = 1, []), close = _ref[_i++];
-;alert(contents.join(""));'>run: contents.join("")</div><br class='clear' /></div>
+;alert(contents.join(""));'>executar: contents.join("")</div><br class='clear' /></div>
 
     <p>
       <span id="fat_arrow" class="bookmark"></span>
@@ -1806,7 +1804,7 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
 hi = function() {
   return [document.title, "Hello JavaScript"].join(": ");
 };
-;alert(hi());'>run: hi()</div><br class='clear' /></div>
+;alert(hi());'>executar: hi()</div><br class='clear' /></div>
 
     <p>
       <span id="switch" class="bookmark"></span>
@@ -1907,7 +1905,7 @@ healthy <span class="Keyword">=</span> (<span class="Number">200</span> <span cl
 cholesterol = 127;
 
 healthy = (200 > cholesterol && cholesterol > 60);
-;alert(healthy);'>run: healthy</div><br class='clear' /></div>
+;alert(healthy);'>executar: healthy</div><br class='clear' /></div>
 
     <p>
       <span id="strings" class="bookmark"></span>
@@ -1939,7 +1937,7 @@ author = "Wittgenstein";
 quote = "A picture is a fact. -- " + author;
 
 sentence = "" + (22 / 7) + " is a decent approximation of π";
-;alert(sentence);'>run: sentence</div><br class='clear' /></div>
+;alert(sentence);'>executar: sentence</div><br class='clear' /></div>
     <p>
       Multiline strings are allowed in CoffeeScript.
     </p>
@@ -1957,7 +1955,7 @@ mobyDick <span class="Keyword">=</span> <span class="String"><span class="String
 </pre><script>window.example35 = "mobyDick = \"Call me Ishmael. Some years ago --\n never mind how long precisely -- having little\n or no money in my purse, and nothing particular\n to interest me on shore, I thought I would sail\n about a little and see the watery part of the\n world...\"\n\nalert mobyDick"</script><div class='minibutton load' onclick='javascript: loadConsole(example35);'>load</div><div class='minibutton ok' onclick='javascript: var mobyDick;
 
 mobyDick = "Call me Ishmael. Some years ago -- never mind how long precisely -- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world...";
-;alert(mobyDick);'>run: mobyDick</div><br class='clear' /></div>
+;alert(mobyDick);'>executar: mobyDick</div><br class='clear' /></div>
     <p>
       Block strings can be used to hold formatted or indentation-sensitive text
       (or, if you just don't feel like escaping quotes and apostrophes). The
@@ -1976,7 +1974,7 @@ html <span class="Keyword">=</span> <span class="String"><span class="String">&q
 </pre><script>window.example36 = "html = \"\"\"\n       <strong>\n         cup of coffeescript\n       </strong>\n       \"\"\"\n\nalert html"</script><div class='minibutton load' onclick='javascript: loadConsole(example36);'>load</div><div class='minibutton ok' onclick='javascript: var html;
 
 html = "<strong>\n  cup of coffeescript\n</strong>";
-;alert(html);'>run: html</div><br class='clear' /></div>
+;alert(html);'>executar: html</div><br class='clear' /></div>
     <p>
       Double-quoted block strings, like other double-quoted strings, allow interpolation.
     </p>
