@@ -19,7 +19,7 @@
     <a id="logo" href="#top"> </a>
     <div class="navigation toc">
       <div class="button">
-        Índice Analítico
+        Índice
       </div>
       <div class="contents menu">
         <a href="#overview">Visão Geral</a>
@@ -1043,12 +1043,14 @@ lyrics = (function() {
 </pre><script>window.example13 = "for filename in list\n  do (filename) ->\n    fs.readFile filename, (err, contents) ->\n      compile filename, contents.toString()"</script><div class='minibutton load' onclick='javascript: loadConsole(example13);'>carregar</div><br class='clear' /></div>
     <p>
       <span id="slices" class="bookmark"></span>
-      <b class="header">Array Slicing and Splicing with Ranges</b>
-      Ranges can also be used to extract slices of arrays.
-      With two dots (<tt>3..6</tt>), the range is inclusive (<tt>3, 4, 5, 6</tt>);
-      with three dots (<tt>3...6</tt>), the range excludes the end (<tt>3, 4, 5</tt>).
-      Slices indices have useful defaults. An omitted first index defaults to
-      zero and an omitted second index defaults to the size of the array.
+      <b class="header">Fatiamento e Substituição de Arrays</b>
+      Intervalos (<em>ranges</em>) também podem ser usados para extrair fatias
+      (<em>slices</em>) de <em>arrays</em>.
+      Com dois pontos (<tt>3..6</tt>), o intervalo é inclusivo (<tt>3, 4, 5, 6</tt>);
+      Com trêz pontos (<tt>3...6</tt>), o intervalo exclui o final (<tt>3, 4, 5</tt>).
+      Índices de fatias têm padrões úteis. Se o primeiro índice for omitido, terá o
+      mesmo efeito que ter sido setado com <tt>0</tt>, e se o segundo índice for omitido,
+      terá o mesmo efeito que ter sido setado com o tamanho do <em>array</em>.
     </p>
     <div class='code'><pre class="idle">numbers <span class="Keyword">=</span> [<span class="Number">1</span>, <span class="Number">2</span>, <span class="Number">3</span>, <span class="Number">4</span>, <span class="Number">5</span>, <span class="Number">6</span>, <span class="Number">7</span>, <span class="Number">8</span>, <span class="Number">9</span>]
 
@@ -1083,8 +1085,8 @@ end = numbers.slice(6);
 copy = numbers.slice(0);
 ;alert(middle);'>executar: middle</div><br class='clear' /></div>
     <p>
-      The same syntax can be used with assignment to replace a segment of an array
-      with new values, splicing it.
+      A mesma sintaxe pode ser usada com atribuição para substituir um segmento de
+      um <em>array</em> com novos valores, "emendando-o" (<em>splice</em>).
     </p>
     <div class='code'><pre class="idle">numbers <span class="Keyword">=</span> [<span class="Number">0</span>, <span class="Number">1</span>, <span class="Number">2</span>, <span class="Number">3</span>, <span class="Number">4</span>, <span class="Number">5</span>, <span class="Number">6</span>, <span class="Number">7</span>, <span class="Number">8</span>, <span class="Number">9</span>]
 
@@ -1105,7 +1107,7 @@ numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 [].splice.apply(numbers, [3, 4].concat(_ref = [-3, -4, -5, -6])), _ref;
 ;alert(numbers);'>executar: numbers</div><br class='clear' /></div>
     <p>
-      Note that JavaScript strings are immutable, and can't be spliced.
+      Perceba que <em>strings</em> JavaScript são imutáveis, e não podem ser "emendadas".
     </p>
     <p>
       <span id="expressions" class="bookmark"></span>
