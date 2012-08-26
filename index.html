@@ -1417,28 +1417,28 @@ zip <span class="Keyword">=</span> <span class="Keyword">typeof</span> lottery.d
 
     <p>
       <span id="classes" class="bookmark"></span>
-      <b class="header">Classes, Inheritance, and Super</b>
-      JavaScript's prototypal inheritance has always been a bit of a
-      brain-bender, with a whole family tree of libraries that provide a cleaner
-      syntax for classical inheritance on top of JavaScript's prototypes:
+      <b class="header">Classes, Herança, and Superclasses</b>
+      A herança prototipada de JavaScript sempre foi um pouco confusa, com toda
+      uma árvore genealógica de bibliotecas que fornecem uma sintaxe mais clara
+      para herança clássica no topo dos protótipos JavaScript:
       <a href="http://code.google.com/p/base2/">Base2</a>,
       <a href="http://prototypejs.org/">Prototype.js</a>,
       <a href="http://jsclass.jcoglan.com/">JS.Class</a>, etc.
-      The libraries provide syntactic sugar, but the built-in inheritance would
-      be completely usable if it weren't for a couple of small exceptions:
-      it's awkward to call <b>super</b> (the prototype object's
-      implementation of the current function), and it's awkward to correctly
-      set the prototype chain.
+
+      As bibliotecas oferecem um "açúcar sintático" (), e a herança padrão seria
+      completamente utilizável se não fosse por umas pequenas exceções:
+      é estranho chamar a <b>superclasse</b> (a implementação do protótipo do objeto da
+      função atual), e é estranho utilizar a cadeia de protótipo corretamente.
     </p>
     <p>
-      Instead of repetitively attaching functions to a prototype, CoffeeScript
-      provides a basic <tt>class</tt> structure that allows you to name your class,
-      set the superclass, assign prototypal properties, and define the constructor,
-      in a single assignable expression.
+      Em vez de anexar funções a um protótipo repetidamente, CoffeeScript fornece
+      uma estrutura básica <tt>class</tt> que permite a você nomear sua classe,
+      setar a superclasse, atribuir propriedades de protótipo, e definir o
+      construtor em uma única expressão atribuível.
     </p>
     <p>
-      Constructor functions are named, to better support helpful stack traces.
-      In the first class in the example below, <tt>this.constructor.name is "Animal"</tt>.
+      Funções construtoras são nomeadas, para melhor apoiar os rastreamentos úteis
+      de pilha. Na primeira classe no exemplo abaixo, <tt>this.constructor.name</tt> is "Animal".
     </p>
     <div class='code'><pre class="idle"><span class="Storage">class</span> <span class="TypeName">Animal</span>
   <span class="FunctionName">constructor</span><span class="Keyword">:</span> <span class="FunctionArgument">(@name)</span> <span class="Storage">-&gt;</span>
@@ -1585,12 +1585,12 @@ sam.move();
 tom.move();
 ;'>executar</div><br class='clear' /></div>
     <p>
-      If structuring your prototypes classically isn't your cup of tea, CoffeeScript
-      provides a couple of lower-level conveniences. The <tt>extends</tt> operator
-      helps with proper prototype setup, and can be used to create an inheritance
-      chain between any pair of constructor functions; <tt>::</tt> gives you
-      quick access to an object's prototype; and <tt>super()</tt>
-      is converted into a call against the immediate ancestor's method of the same name.
+      Se estruturar seus protótipos da maneira clássica não é sua praia, CoffeeScript
+      fornece umas conveniências de baixo nível. O operador <tt>extends</tt> ajuda
+      com a configuração de protótipo adequada, e pode ser usado para criar uma cadeia
+      de herança entre qualquer par de funções construtoras; <tt>::</tt> lhe dá
+      acesso rápido a uma propriedade de objeto; e <tt>super()</tt> é convertido em
+      uma chamada direta ao método com o mesmo nome do seu ancestral (superclasse).
     </p>
     <div class='code'><pre class="idle"><span class="FunctionName">String::dasherize </span><span class="Keyword">=</span> <span class="Keyword">-</span><span class="Keyword">&gt;</span>
   <span class="Variable">this</span>.replace <span class="String">/_/g</span>, <span class="String"><span class="String">&quot;</span>-<span class="String">&quot;</span></span>
@@ -1605,11 +1605,12 @@ String.prototype.dasherize = function() {
 };
 ;alert("one_two".dasherize());'>executar: "one_two".dasherize()</div><br class='clear' /></div>
     <p>
-      Finally, class definitions are blocks of executable code, which make for interesting
-      metaprogramming possibilities. Because in the context of a class definition,
-      <tt>this</tt> is the class object itself (the constructor function), you
-      can assign static properties by using <br /><tt>@property: value</tt>, and call
-      functions defined in parent classes: <tt>@attr 'title', type: 'text'</tt>
+      Finalmente, definições de classe são blocos de código executável, o que faz com
+      que as possibilidades de metaprogramação se tornem interessantes. Por causa do
+      contexto de uma definição de classe, <tt>this</tt> é o próprio objeto de classe
+      (a função construtora), você pode atribuir propriedades estáticas usando <br />
+      <tt>@property: value</tt>, e chamar funções definidas em classes pai:
+      <tt>@attr 'title', type: 'text'</tt>.
     </p>
 
     <p>
