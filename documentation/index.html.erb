@@ -613,43 +613,44 @@ Expressions
 
     <p>
       <span id="operators" class="bookmark"></span>
-      <b class="header">Operators and Aliases</b>
-      Because the <tt>==</tt> operator frequently causes undesirable coercion,
-      is intransitive, and has a different meaning than in other languages,
-      CoffeeScript compiles <tt>==</tt> into <tt>===</tt>, and <tt>!=</tt> into
+      <b class="header">Operadores e Aliases</b>
+      Pelo fato de o operador <tt>==</tt> frequentemente causar coerção indesejável,
+      é intransitivo, e tem um significado diferente do que em outras linguagens,
+      CoffeeScript compila <tt>==</tt> para <tt>===</tt>, e <tt>!=</tt> para
       <tt>!==</tt>.
-      In addition, <tt>is</tt> compiles into <tt>===</tt>,
-      and <tt>isnt</tt> into <tt>!==</tt>.
+      Além disso, <tt>is</tt> compila para <tt>===</tt>, e <tt>isnt</tt> para
+      <tt>!==</tt>.
     </p>
     <p>
-      You can use <tt>not</tt> as an alias for <tt>!</tt>.
+      Você pode usar <tt>not</tt> como um apelido (<em>alias</em>) para <tt>!</tt>.
     </p>
     <p>
-      For logic, <tt>and</tt> compiles to <tt>&amp;&amp;</tt>, and <tt>or</tt>
-      into <tt>||</tt>.
+      Por lógica, <tt>and</tt> compila para <tt>&amp;&amp;</tt>, e <tt>or</tt>
+      para <tt>||</tt>.
     </p>
     <p>
-      Instead of a newline or semicolon, <tt>then</tt> can be used to separate
-      conditions from expressions, in <b>while</b>,
-      <b>if</b>/<b>else</b>, and <b>switch</b>/<b>when</b> statements.
+      Em vez de uma nova linha ou ponto-e-vígula, <tt>then</tt> pode ser usado
+      para separar condições de expressões, em instuções <b>while</b>,
+      <b>if</b>/<b>else</b>, e <b>switch</b>/<b>when</b>.
     </p>
     <p>
-      As in <a href="http://yaml.org/">YAML</a>, <tt>on</tt> and <tt>yes</tt>
-      are the same as boolean <tt>true</tt>, while <tt>off</tt> and <tt>no</tt> are boolean <tt>false</tt>.
+      Como em <a href="http://yaml.org/">YAML</a>, <tt>on</tt> e <tt>yes</tt>
+      são o mesmo booleano <tt>true</tt>, enquanto <tt>off</tt> e <tt>no</tt> são o
+      booleano <tt>false</tt>.
     </p>
     <p>
-      <tt>unless</tt> can be used as the inverse of <tt>if</tt>.
+      <tt>unless</tt> pode ser usado como o inverso de <tt>if</tt>.
     </p>
     <p>
-      As a shortcut for <tt>this.property</tt>, you can use <tt>@property</tt>.
+      Como um atalho para <tt>this.propriedade</tt>, você pode usar <tt>@propriedade</tt>.
     </p>
     <p>
-      You can use <tt>in</tt> to test for array presence, and <tt>of</tt> to
-      test for JavaScript object-key presence.
+      Você pode usar <tt>in</tt> para testar a presença em <em>array</em>, e <tt>of</tt>
+      para testar a presença de chave (<em>key</em>) de objeto JavaScript.
     </p>
 
     <p>
-      All together now:
+      Tudo junto agora:
     </p>
 
     <table class="definitions">
