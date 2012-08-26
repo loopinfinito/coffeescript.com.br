@@ -1303,7 +1303,7 @@ alert((function() {
       <tr><td><tt>false, no, off</tt></td><td><tt>false</tt></td></tr>
       <tr><td><tt>@, this</tt></td><td><tt>this</tt></td></tr>
       <tr><td><tt>of</tt></td><td><tt>in</tt></td></tr>
-      <tr><td><tt>in</tt></td><td><i><small>no JS equivalent</small></i></td></tr>
+      <tr><td><tt>in</tt></td><td><i><small>sem equivalente JS</small></i></td></tr>
     </table>
 
     <div class='code'><pre class="idle">launch() <span class="Keyword">if</span> ignition <span class="Keyword">is</span> <span class="BuiltInConstant">on</span>
@@ -1343,16 +1343,17 @@ print inspect <span class="String"><span class="String">&quot;</span>My name is 
 </pre><script>window.example20 = "launch() if ignition is on\n\nvolume = 10 if band isnt SpinalTap\n\nletTheWildRumpusBegin() unless answer is no\n\nif car.speed < limit then accelerate()\n\nwinner = yes if pick in [47, 92, 13]\n\nprint inspect \"My name is #{@name}\"\n"</script><div class='minibutton load' onclick='javascript: loadConsole(example20);'>carregar</div><br class='clear' /></div>
 
     <p>
-      <b class="header">The Existential Operator</b>
-      It's a little difficult to check for the existence of a variable in
-      JavaScript. <tt>if (variable) ...</tt> comes close, but fails for zero,
-      the empty string, and false. CoffeeScript's existential operator <tt>?</tt> returns true unless
-      a variable is <b>null</b> or <b>undefined</b>, which makes it analogous
-      to Ruby's <tt>nil?</tt>
+      <b class="header">O Operador Existencial</b>
+      É um pouco difícil de verificar a existência de uma variável em
+      JavaScript. <tt>if (variavel) ...</tt> chega perto, mais falha para
+      zero (<tt>0</tt>), <em>string</em> vazia (<tt>""</tt>) e falso (<tt>false</tt>).
+      O operador existencial de CoffeeScript <tt>?</tt> retorna verdadeiro a menos
+      que a variável seja <b>null</b> ou <b>undefined</b>, o que a faz análoga
+      ao <tt>nil?</tt> de Ruby.
     </p>
     <p>
-      It can also be used for safer conditional assignment than <tt>||=</tt>
-      provides, for cases where you may be handling numbers or strings.
+      Ele também pode ser usado para atribuição condicional com mais segurança que
+      <tt>||=</tt> fornece, para casos onde você tenha que lidar com números ou <em>strings</em>.
     </p>
     <div class='code'><pre class="idle">solipsism <span class="Keyword">=</span> <span class="BuiltInConstant">true</span> <span class="Keyword">if</span> mind<span class="Keyword">?</span> <span class="Keyword">and</span> <span class="Keyword">not</span> world<span class="Keyword">?</span>
 
@@ -1395,12 +1396,12 @@ if (speed == null) {
 footprints = typeof yeti !== "undefined" && yeti !== null ? yeti : "bear";
 ;alert(footprints);'>executar: footprints</div><br class='clear' /></div>
     <p>
-      The accessor variant of the existential operator <tt>?.</tt> can be used to soak
-      up null references in a chain of properties. Use it instead
-      of the dot accessor <tt>.</tt> in cases where the base value may be <b>null</b>
-      or <b>undefined</b>. If all of the properties exist then you'll get the expected
-      result, if the chain is broken, <b>undefined</b> is returned instead of
-      the <b>TypeError</b> that would be raised otherwise.
+      A variante do operador existencial <tt>?.</tt> pode ser usada para absorver
+      referências nulas em uma cadeia de propriedades. Use-o no lugar do operador
+      <tt>.</tt> nos casos onde o valor base pode ser <b>null</b> ou <b>undefined</b>.
+      Se todas a propriedades existem então você terá o resultado esperado, se a cadeia
+      estiver quebrada, <b>undefined</b> é retornado em vez de <b>TypeError</b> que seria
+      o normal.
     </p>
     <div class='code'><pre class="idle">zip <span class="Keyword">=</span> lottery.drawWinner<span class="Keyword">?</span>().address<span class="Keyword">?</span>.zipcode
 </pre><pre class="idle"><span class="Storage">var</span> zip, _ref;
@@ -1408,10 +1409,10 @@ footprints = typeof yeti !== "undefined" && yeti !== null ? yeti : "bear";
 zip <span class="Keyword">=</span> <span class="Keyword">typeof</span> lottery.drawWinner <span class="Keyword">===</span> <span class="String"><span class="String">&quot;</span>function<span class="String">&quot;</span></span> ? (_ref <span class="Keyword">=</span> lottery.drawWinner().address) <span class="Keyword">!</span><span class="Keyword">=</span> <span class="BuiltInConstant">null</span> ? _ref.zipcode : <span class="Storage">void</span> <span class="Number">0</span> : <span class="Storage">void</span> <span class="Number">0</span>;
 </pre><script>window.example22 = "zip = lottery.drawWinner?().address?.zipcode\n"</script><div class='minibutton load' onclick='javascript: loadConsole(example22);'>carregar</div><br class='clear' /></div>
     <p>
-      Soaking up nulls is similar to Ruby's
-      <a href="http://andand.rubyforge.org/">andand gem</a>, and to the
+      Absorver valores nulos (<em>null</em>) é similar ao
+      <a href="http://andand.rubyforge.org/">andand gem</a> de Ruby, e ao
       <a href="http://groovy.codehaus.org/Operators#Operators-SafeNavigationOperator%28%3F.%29">safe navigation operator</a>
-      in Groovy.
+      em Groovy.
     </p>
 
     <p>
