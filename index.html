@@ -31,7 +31,7 @@
         <a href="#conditionals">If, Else, Unless, e Atribuição Condicional</a>
         <a href="#splats">Splats...</a>
         <a href="#loops">Laços e Compreensões de Listas</a>
-        <a href="#slices">Fatiamento e Substituição de Arrays</a>
+        <a href="#slices">Fatiamento e Substituição com Intervalos de Arrays</a>
         <a href="#expressions">Tudo é uma Expressão</a>
         <a href="#operators">Operadores e Aliases</a>
         <a href="#classes">Classes, Herança, e Superclasses</a>
@@ -1043,7 +1043,7 @@ lyrics = (function() {
 </pre><script>window.example13 = "for filename in list\n  do (filename) ->\n    fs.readFile filename, (err, contents) ->\n      compile filename, contents.toString()"</script><div class='minibutton load' onclick='javascript: loadConsole(example13);'>carregar</div><br class='clear' /></div>
     <p>
       <span id="slices" class="bookmark"></span>
-      <b class="header">Fatiamento e Substituição de Arrays</b>
+      <b class="header">Fatiamento e Substituição com Intervalos de Arrays</b>
       Intervalos (<em>ranges</em>) também podem ser usados para extrair fatias
       (<em>slices</em>) de <em>arrays</em>.
       Com dois pontos (<tt>3..6</tt>), o intervalo é inclusivo (<tt>3, 4, 5, 6</tt>);
@@ -1111,13 +1111,12 @@ numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     </p>
     <p>
       <span id="expressions" class="bookmark"></span>
-      <b class="header">Everything is an Expression (at least, as much as possible)</b>
-      You might have noticed how even though we don't add return statements
-      to CoffeeScript functions, they nonetheless return their final value.
-      The CoffeeScript compiler tries to make sure that all statements in the
-      language can be used as expressions. Watch how the <tt>return</tt> gets
-      pushed down into each possible branch of execution in the function
-      below.
+      <b class="header">Tudo é uma Expressão (pelo menos, o tanto quanto possível)</b>
+      Você deve ter notado que apesar de não termos adicionado declarações de
+      retorno às funções CoffeeScript, mesmo assim elas retornam seu valor final.
+      O compilador CoffeeScript tenta se assegurar que todas as declarações na
+      linguagem possam ser usadas como expressões. Veja como o <tt>return</tt>
+      acaba indo parar no final de cada ramo possível de execução na função abaixo.
     </p>
     <div class='code'><pre class="idle"><span class="FunctionName">grade </span><span class="Keyword">=</span> <span class="FunctionArgument">(student)</span> <span class="Storage">-&gt;</span>
   <span class="Keyword">if</span> student.excellentWork
@@ -1164,13 +1163,17 @@ grade = function(student) {
 eldest = 24 > 21 ? "Liz" : "Ike";
 ;alert(eldest);'>executar: eldest</div><br class='clear' /></div>
     <p>
+      Apesar de funções sempre retornarem seu valor final, é possível e encorajado
+      retornar o mais depressa possível de um corpo de função escrevendo explicitamente
+      <em>return</em> (<tt>return value</tt>),
       Even though functions will always return their final value, it's both possible
       and encouraged to return early from a function body writing out the explicit
-      return (<tt>return value</tt>), when you know that you're done.
+      return (<tt>return value</tt>), quando você sabe que terminou.
     </p>
     <p>
-      Because variable declarations occur at the top of scope, assignment can
-      be used within expressions, even for variables that haven't been seen before:
+      Pelo fato de declarações de variável ocorrerem no topo do escopo, atribuição
+      pode ser usada dentro de expressões, até mesmo para variáveis que não foram
+      vistas antes:
     </p>
     <div class='code'><pre class="idle">six <span class="Keyword">=</span> (one <span class="Keyword">=</span> <span class="Number">1</span>) <span class="Keyword">+</span> (two <span class="Keyword">=</span> <span class="Number">2</span>) <span class="Keyword">+</span> (three <span class="Keyword">=</span> <span class="Number">3</span>)
 
@@ -1183,10 +1186,10 @@ six <span class="Keyword">=</span> (one <span class="Keyword">=</span> <span cla
 six = (one = 1) + (two = 2) + (three = 3);
 ;alert(six);'>executar: six</div><br class='clear' /></div>
     <p>
-      Things that would otherwise be statements in JavaScript, when used
-      as part of an expression in CoffeeScript, are converted into expressions
-      by wrapping them in a closure. This lets you do useful things, like assign
-      the result of a comprehension to a variable:
+      Coisas que poderiam, de outra maneira, ser declarações em JavaScript, quando
+      usadas como uma parte de uma expressão em CoffeeScript, são convertidas em
+      expressões agrupando-as em um bloco. Isto permite a você fazer coisas úteis,
+      como atribuir o resultado de uma compreensão de lista a uma variável:
     </p>
     <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> The first ten global properties.</span>
 
@@ -1213,8 +1216,8 @@ globals = ((function() {
 })()).slice(0, 10);
 ;alert(globals);'>executar: globals</div><br class='clear' /></div>
     <p>
-      As well as silly things, like passing a <b>try/catch</b> statement directly
-      into a function call:
+      Bem como coisas bobas, como passar uma declaração <b>try/catch</b> diretamente
+      em uma chamada de função:
     </p>
     <div class='code'><pre class="idle">alert(
   <span class="Keyword">try</span>
@@ -1241,10 +1244,10 @@ alert((function() {
 })());
 ;'>executar</div><br class='clear' /></div>
     <p>
-      There are a handful of statements in JavaScript that can't be meaningfully
-      converted into expressions, namely <tt>break</tt>, <tt>continue</tt>,
-      and <tt>return</tt>. If you make use of them within a block of code,
-      CoffeeScript won't try to perform the conversion.
+      Há um punhado de instruções em JavaScript que não podem ser verdadeiramente
+      convertidas em expressões, como <tt>break</tt>, <tt>continue</tt>,
+      e <tt>return</tt>. Se você faz uso delas dentro de um bloco de código,
+      CoffeeScript não tentará realizar a conversão.
     </p>
 
     <p>
