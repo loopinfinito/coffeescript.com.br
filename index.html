@@ -817,21 +817,22 @@ alert("The Field: " + rest);
 
     <p>
       <span id="loops" class="bookmark"></span>
-      <b class="header">Loops and Comprehensions</b>
-      Most of the loops you'll write in CoffeeScript will be <b>comprehensions</b>
-      over arrays, objects, and ranges. Comprehensions replace (and compile into)
-      <b>for</b> loops, with optional guard clauses and the value of the current array index.
-      Unlike for loops, array comprehensions are expressions, and can be returned
-      and assigned.
+      <b class="header">Laços e Compreensões de Listas</b>
+      A maioria dos laços (<em>loops</em>) que você escreverá em CoffeeScript serão
+      <b>compreensões de listas</b> em <em>arrays</em>, objetos, e intervalos (<em>ranges</em>).
+      Compreensões de listas substituem (e compilam para) laços <b>for</b>, com
+      cláusulas <em>guard</em> opcionais e o valor atual do índice do <em>array</em>.
+      Diferente de laços, as <b>compreensões</b> são expressões, e podem ser retornadas
+      e atribuídas.
     </p>
-    <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> Eat lunch.</span>
+    <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> Coma o almoço</span>
 eat food <span class="Keyword">for</span> food <span class="Keyword">in</span> [<span class="String"><span class="String">'</span>toast<span class="String">'</span></span>, <span class="String"><span class="String">'</span>cheese<span class="String">'</span></span>, <span class="String"><span class="String">'</span>wine<span class="String">'</span></span>]
 
-<span class="Comment"><span class="Comment">#</span> Fine five course dining.</span>
+<span class="Comment"><span class="Comment">#</span> Jantar fino de cinco pratos</span>
 courses <span class="Keyword">=</span> [<span class="String"><span class="String">'</span>greens<span class="String">'</span></span>, <span class="String"><span class="String">'</span>caviar<span class="String">'</span></span>, <span class="String"><span class="String">'</span>truffles<span class="String">'</span></span>, <span class="String"><span class="String">'</span>roast<span class="String">'</span></span>, <span class="String"><span class="String">'</span>cake<span class="String">'</span></span>]
 menu i <span class="Keyword">+</span> <span class="Number">1</span>, dish <span class="Keyword">for</span> dish, i <span class="Keyword">in</span> courses
 
-<span class="Comment"><span class="Comment">#</span> Health conscious meal.</span>
+<span class="Comment"><span class="Comment">#</span> Refeição saudável</span>
 foods <span class="Keyword">=</span> [<span class="String"><span class="String">'</span>broccoli<span class="String">'</span></span>, <span class="String"><span class="String">'</span>spinach<span class="String">'</span></span>, <span class="String"><span class="String">'</span>chocolate<span class="String">'</span></span>]
 eat food <span class="Keyword">for</span> food <span class="Keyword">in</span> foods <span class="Keyword">when</span> food <span class="Keyword">isnt</span> <span class="String"><span class="String">'</span>chocolate<span class="String">'</span></span>
 </pre><pre class="idle"><span class="Storage">var</span> courses, dish, food, foods, i, _i, _j, _k, _len, _len1, _len2, _ref;
@@ -857,14 +858,15 @@ foods <span class="Keyword">=</span> [<span class="String"><span class="String">
     eat(food);
   }
 }
-</pre><script>window.example9 = "# Eat lunch.\neat food for food in ['toast', 'cheese', 'wine']\n\n# Fine five course dining.\ncourses = ['greens', 'caviar', 'truffles', 'roast', 'cake']\nmenu i + 1, dish for dish, i in courses\n\n# Health conscious meal.\nfoods = ['broccoli', 'spinach', 'chocolate']\neat food for food in foods when food isnt 'chocolate'\n"</script><div class='minibutton load' onclick='javascript: loadConsole(example9);'>carregar</div><br class='clear' /></div>
+</pre><script>window.example9 = "# Coma o almoço\neat food for food in ['toast', 'cheese', 'wine']\n\n# Jantar fino de cinco pratos\ncourses = ['greens', 'caviar', 'truffles', 'roast', 'cake']\nmenu i + 1, dish for dish, i in courses\n\n# Refeição saudável\nfoods = ['broccoli', 'spinach', 'chocolate']\neat food for food in foods when food isnt 'chocolate'\n"</script><div class='minibutton load' onclick='javascript: loadConsole(example9);'>carregar</div><br class='clear' /></div>
     <p>
-      Comprehensions should be able to handle most places where you otherwise
-      would use a loop, <b>each</b>/<b>forEach</b>, <b>map</b>, or <b>select</b>/<b>filter</b>, for example:
+      Compreensões devem ser capazes de lidar com a maioria dos casos onde você
+      de outra maneira usaria um laço normal, <b>each</b>/<b>forEach</b>, <b>map</b>,
+      ou <b>select</b>/<b>filter</b>, por exemplo:
       <tt>shortNames = (name for name in list when name.length &lt; 5)</tt><br />
-      If you know the start and end of your loop, or would like to step through
-      in fixed-size increments, you can use a range to specify the start and
-      end of your comprehension.
+      Se você sabe o começa e termina o laço, ou gostaria de percorrer o laço
+      com incrementos de tamanho fixo, você pode usar um intervalo (<em>range</em>)
+      para especificar o começo e o fim das suas <b>compreensões</b>.
     </p>
     <div class='code'><pre class="idle">countdown <span class="Keyword">=</span> (num <span class="Keyword">for</span> num <span class="Keyword">in</span> [<span class="Number">10</span>..<span class="Number">1</span>])
 
@@ -890,23 +892,23 @@ countdown = (function() {
 })();
 ;alert(countdown);'>executar: countdown</div><br class='clear' /></div>
     <p>
-      Note how because we are assigning the value of the comprehensions to a
-      variable in the example above, CoffeeScript is collecting the result of
-      each iteration into an array. Sometimes functions end with loops that are
-      intended to run only for their side-effects. Be careful that you're not
-      accidentally returning the results of the comprehension in these cases,
-      by adding a meaningful return value &mdash; like <tt>true</tt> &mdash; or <tt>null</tt>,
-      to the bottom of your function.
+      Peceba que, pelo fato de estarmos atribuindo o valor das compreensões de lista
+      a uma variável no exemplo acima, CoffeeScript coleta o resultado de cada
+      iteração em um <em>array</em>. Às vezes funções terminam com laços que
+      servem apenas para rodar no contexto da própria função. Tenha cuidado para
+      não retornar acidentalmente os resultados da compreensão, nestes casos
+      apenas adicione um valor de retorno significativo &mdash; como <tt>true</tt>
+      &mdash; ou <tt>null</tt>, ao final da sua função.
     </p>
     <p>
-      To step through a range comprehension in fixed-size chunks,
-      use <tt>by</tt>, for example:<br />
-      <tt>evens = (x for x in [0..10] by 2)</tt>
+      Para percorrer uma compreensão de intervalo em passos de tamanho fixo,
+      use <tt>by</tt>, por exemplo:<br />
+      <tt>pares = (x for x in [0..10] by 2)</tt>
     </p>
     <p>
-      Comprehensions can also be used to iterate over the keys and values in
-      an object. Use <tt>of</tt> to signal comprehension over the properties of
-      an object instead of the values in an array.
+      Compreensões também podem ser usadas para iterar sobre as chaves (<em>key</em>) e valores (<em>value</em>)
+      em um objeto. Use <tt>of</tt> para sinalizar a compreensão sobre as propriedades
+      de um objeto, em vez dos valores em um <em>array</em>.
     </p>
     <div class='code'><pre class="idle">yearsOld <span class="Keyword">=</span> max: <span class="Number">10</span>, ida: <span class="Number">9</span>, tim: <span class="Number">11</span>
 
@@ -948,23 +950,23 @@ ages = (function() {
 })();
 ;alert(ages.join(", "));'>executar: ages.join(", ")</div><br class='clear' /></div>
     <p>
-      If you would like to iterate over just the keys that are defined on the
-      object itself, by adding a <tt>hasOwnProperty</tt>
-      check to avoid properties that may be inherited from the prototype, use<br />
+      Se você desejasse iterar somente sobre as chaves (<em>keys</em>) que são
+      definidas no próprio objeto, adicionando uma verificação <tt>hasOwnProperty</tt>
+      para evitar propriedades que possam ter sido herdadas do protótipo, use<br />
       <tt>for own key, value of object</tt>
     </p>
     <p>
-      The only low-level loop that CoffeeScript provides is the <b>while</b> loop. The
-      main difference from JavaScript is that the <b>while</b> loop can be used
-      as an expression, returning an array containing the result of each iteration
-      through the loop.
+      O único laço de baixo nível que CoffeeScript fornece é o laço <b>while</b>. A
+      principal diferença de JavaScript é que o laço <b>while</b> pode ser usado como
+      uma expressão, retornando um <em>array</em> contendo o resultado de cada iteração
+      atravéz do laço.
     </p>
     <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">#</span> Econ 101</span>
 <span class="Keyword">if</span> <span class="Variable">this</span>.studyingEconomics
   buy()  <span class="Keyword">while</span> supply <span class="Keyword">&gt;</span> demand
   sell() <span class="Keyword">until</span> supply <span class="Keyword">&gt;</span> demand
 
-<span class="Comment"><span class="Comment">#</span> Nursery Rhyme</span>
+<span class="Comment"><span class="Comment">#</span> Rima de berçário</span>
 num <span class="Keyword">=</span> <span class="Number">6</span>
 lyrics <span class="Keyword">=</span> <span class="Keyword">while</span> num <span class="Keyword">-</span><span class="Keyword">=</span> <span class="Number">1</span>
   <span class="String"><span class="String">&quot;</span><span class="String"><span class="String">#{</span>num<span class="String">}</span></span> little monkeys, jumping on the bed.</span>
@@ -990,7 +992,7 @@ lyrics <span class="Keyword">=</span> (<span class="Storage">function</span>() {
   }
   <span class="Keyword">return</span> _results;
 })();
-</pre><script>window.example12 = "# Econ 101\nif this.studyingEconomics\n  buy()  while supply > demand\n  sell() until supply > demand\n\n# Nursery Rhyme\nnum = 6\nlyrics = while num -= 1\n  \"#{num} little monkeys, jumping on the bed.\n    One fell out and bumped his head.\"\n\nalert lyrics.join(\"\\n\")"</script><div class='minibutton load' onclick='javascript: loadConsole(example12);'>carregar</div><div class='minibutton ok' onclick='javascript: var lyrics, num;
+</pre><script>window.example12 = "# Econ 101\nif this.studyingEconomics\n  buy()  while supply > demand\n  sell() until supply > demand\n\n# Rima de berçário\nnum = 6\nlyrics = while num -= 1\n  \"#{num} little monkeys, jumping on the bed.\n    One fell out and bumped his head.\"\n\nalert lyrics.join(\"\\n\")"</script><div class='minibutton load' onclick='javascript: loadConsole(example12);'>carregar</div><div class='minibutton ok' onclick='javascript: var lyrics, num;
 
 if (this.studyingEconomics) {
   while (supply > demand) {
@@ -1013,15 +1015,15 @@ lyrics = (function() {
 })();
 ;alert(lyrics.join("\n"));'>executar: lyrics.join("\n")</div><br class='clear' /></div>
     <p>
-      For readability, the <b>until</b> keyword is equivalent to <tt>while not</tt>,
-      and the <b>loop</b> keyword is equivalent to <tt>while true</tt>.
+      Para legibilidade, a palavra-chave <b>until</b> é equivalente a <tt>while not</tt>,
+      e a palavra-chave <b>loop</b> é equivalente a <tt>while true</tt>.
     </p>
     <p>
-      When using a JavaScript loop to generate functions, it's common to insert
-      a closure wrapper in order to ensure that loop variables are closed over,
-      and all the generated functions don't just share the final values. CoffeeScript
-      provides the <tt>do</tt> keyword, which immediately invokes a passed function,
-      forwarding any arguments.
+      Quando usando um laço JavaScript para gerar funções, é comum inserir um
+      agrupamento (<em>wrapper</em>) a fim de garantir que as variáveis do laço estão
+      corretamente fechadas, e todas as funções geradas não compartilhem apenas
+      os valores finais. CoffeeScript fornece a palavra-chave <tt>do</tt>, que invoca
+      imediatamente uma função passada com seus respectivos argumentos.
     </p>
     <div class='code'><pre class="idle"><span class="Keyword">for</span> filename <span class="Keyword">in</span> list
   do <span class="FunctionArgument">(filename)</span> <span class="Storage">-&gt;</span>
@@ -1039,7 +1041,6 @@ lyrics = (function() {
   _fn(filename);
 }
 </pre><script>window.example13 = "for filename in list\n  do (filename) ->\n    fs.readFile filename, (err, contents) ->\n      compile filename, contents.toString()"</script><div class='minibutton load' onclick='javascript: loadConsole(example13);'>carregar</div><br class='clear' /></div>
-
     <p>
       <span id="slices" class="bookmark"></span>
       <b class="header">Array Slicing and Splicing with Ranges</b>
