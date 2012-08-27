@@ -2096,30 +2096,33 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
 
     <h2>
       <span id="scripts" class="bookmark"></span>
-      "text/coffeescript" Script Tags
+      Tags de script "text/coffeescript"
     </h2>
 
     <p>
-      While it's not recommended for serious use, CoffeeScripts may be included
-      directly within the browser using <tt>&lt;script type="text/coffeescript"&gt;</tt>
-      tags. The source includes a compressed and minified version of the compiler
-      (<a href="extras/coffee-script.js">Download current version here, 39k when gzipped</a>)
-      as <tt>extras/coffee-script.js</tt>. Include this file on a page with
-      inline CoffeeScript tags, and it will compile and evaluate them in order.
+      Enquanto não é recomendável para uso em produção, códigos CoffeeScript podem ser
+      incluídos diretamente no navegador usando <em>tags</em> <tt>&lt;script type="text/coffeescript"&gt;</tt>.
+      O código fonte inclui uma versão compactada e minificada do compilador
+      (<a href="extras/coffee-script.js">Faça o download da versão atual, 39k em gzip</a>)
+      como em <tt>extras/coffee-script.js</tt>. Inclua este arquivo na página com as
+      <em>tags inline</em> do CoffeeScript, e ele irá compilar e validar os <em>scripts</em> –
+      nesta ordem.
     </p>
 
     <p>
-      In fact, the little bit of glue script that runs "Try CoffeeScript" above,
-      as well as the jQuery for the menu, is implemented in just this way.
-      View source and look at the bottom of the page to see the example.
-      Including the script also gives you access to <tt>CoffeeScript.compile()</tt>
-      so you can pop open Firebug and try compiling some strings.
+      Na verdade, o pequeno <em>script</em> que executa "Experimente CoffeeScript"
+      acima, assim como o jQuery do menu, é implementado exatamente dessa maneira.
+      Abra o código fonte e olhe para o final da página para ver o exemplo.
+      Incluir o <em>script</em> também lhe dá acesso ao <tt>CoffeeScript.compile()</tt>
+      assim você pode abrir o <em>Firebug</em> – ou o <em>Inspector</em> no Chrome –
+      e tentar compilar algumas <em>strings</em>.
     </p>
 
     <p>
-      The usual caveats about CoffeeScript apply &mdash; your inline scripts will
-      run within a closure wrapper, so if you want to expose global variables or
-      functions, attach them to the <tt>window</tt> object.
+      As advertências comuns sobre a aplicação de CoffeeScript &mdash; seus
+      <em>scripts inline</em> serão executados dentro de um ambiente separado,
+      então se você quiser expor variáveis ou funções globais, vincule-as ao
+      objeto <tt>window</tt>.
     </p>
 
     <h2>
