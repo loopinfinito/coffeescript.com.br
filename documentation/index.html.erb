@@ -894,32 +894,34 @@ Expressions
     </h2>
 
     <p>
-      CoffeeScript includes a (very) simple build system similar to
-      <a href="http://www.gnu.org/software/make/">Make</a> and
-      <a href="http://rake.rubyforge.org/">Rake</a>. Naturally,
-      it's called Cake, and is used for the tasks that build and test the CoffeeScript
-      language itself. Tasks are defined in a file named <tt>Cakefile</tt>, and
-      can be invoked by running <tt>cake [task]</tt> from within the directory.
-      To print a list of all the tasks and options, just type <tt>cake</tt>.
+      CoffeeScript inclui um sistema de construção (<em>build system</em>) muito
+      simples parecido com o <a href="http://www.gnu.org/software/make/">Make</a>
+      e o <a href="http://rake.rubyforge.org/">Rake</a>. Naturalmente, ele é
+      chamado de Cake, e é usado pelas tarefas que constroem e testam a própria
+      linguagem CoffeeScript. Tarefas (<em>tasks</em>) são definidas em um arquivo
+      chamado de <tt>Cakefile</tt>, e podem ser invocadas chamando <tt>cake [tarefa]</tt>
+      de dentro do diretório. Para imprimir uma lista de todas as tarefas e opções,
+      basta digitar <tt>cake</tt>.
     </p>
 
     <p>
-      Task definitions are written in CoffeeScript, so you can put arbitrary code
-      in your Cakefile. Define a task with a name, a long description, and the
-      function to invoke when the task is run. If your task takes a command-line
-      option, you can define the option with short and long flags, and it will
-      be made available in the <tt>options</tt> object. Here's a task that uses
-      the Node.js API to rebuild CoffeeScript's parser:
+      Definições de tarefas são escritas em CoffeeScript, assim você pode incluir
+      código arbitrário em seu Cakefile. Defina uma tarefa com um nome, uma descrição,
+      e a função que será invocada quando a tafera for executada. Se sua tarefa
+      tem uma opção de linha de comando, você pode definir a opção com <em>flags</em>
+      curtos e longos, e ela ficará disponível on objeto <tt>options</tt>. Abaixo
+      há uma tarefa que usa a API Node.js para reconstruir o analizador sintático
+      do CoffeeScript:
     </p>
     <%= code_for('cake_tasks') %>
     <p>
-      If you need to invoke one task before another &mdash; for example, running
-      <tt>build</tt> before <tt>test</tt>, you can use the <tt>invoke</tt> function:
-      <tt>invoke 'build'</tt>. Cake tasks are a minimal way to expose your
-      CoffeeScript functions to the command line, so
-      <a href="documentation/docs/cake.html">don't expect any fanciness built-in</a>.
-      If you need dependencies, or async callbacks, it's best to put them in your
-      code itself &mdash; not the cake task.
+      Se você precisa executar uma tarefa antes de outra &mdash; por exemplo, rodando
+      <tt>build</tt> antes de <tt>test</tt>, você pode utilizar a função <tt>invoke</tt>:
+      <tt>invoke 'build'</tt>. Tarefas <em>cake</em> são uma maneira minimalista de
+      expor suas funções CoffeeScript na linha de comando, então
+      <a href="documentation/docs/cake.html">não espere nenhuma extravagância</a>.
+      Se você precisa de dependências, ou de <em>callbacks</em> assíncronos, é melhor
+      você mesmo colocá-los em seu código &mdash; e não a tarefa <em>cake</em>.
     </p>
 
     <h2>
