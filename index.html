@@ -35,8 +35,8 @@
         <a href="#expressions">Tudo é uma Expressão</a>
         <a href="#operators">Operadores e Aliases</a>
         <a href="#classes">Classes, Herança, e Superclasses</a>
-        <a href="#destructuring">Múltiplas Atribuições</a>
-        <a href="#fat_arrow">Ligando Funções</a>
+        <a href="#destructuring">Atribuição de Troca</a>
+        <a href="#fat_arrow">Vinculação de Funções</a>
         <a href="#embedded">JavaScript Incorporado</a>
         <a href="#switch">Switch e Try/Catch</a>
         <a href="#comparisons">Multi Comparações</a>
@@ -1615,14 +1615,14 @@ String.prototype.dasherize = function() {
 
     <p>
       <span id="destructuring" class="bookmark"></span>
-      <b class="header">Destructuring Assignment</b>
-      To make extracting values from complex arrays and objects more convenient,
-      CoffeeScript implements ECMAScript Harmony's proposed
+      <b class="header">Atribuição de Troca</b>
+      Para fazer com que a extração de valores de <em>arrays</em> e objetos complexos
+      mais conveniente, CoffeeScript implementa a sintaxe
       <a href="http://wiki.ecmascript.org/doku.php?id=harmony:destructuring">destructuring assignment</a>
-      syntax. When you assign an array or object literal to a value, CoffeeScript
-      breaks up and matches both sides against each other, assigning the values
-      on the right to the variables on the left. In the simplest case, it can be
-      used for parallel assignment:
+      proposta pelo ECMAScript Harmony. Quando você atribui um <em>array</em> ou objeto
+      para um valor, CoffeeScript se fragmenta e combina os dois lados, atribuindo
+      os valores da direita às variáveis da esquerda. De maneira mais simples, pode
+      ser usado para atribuição paralela:
     </p>
     <div class='code'><pre class="idle">theBait   <span class="Keyword">=</span> <span class="Number">1000</span>
 theSwitch <span class="Keyword">=</span> <span class="Number">0</span>
@@ -1649,8 +1649,7 @@ theSwitch = 0;
 _ref = [theSwitch, theBait], theBait = _ref[0], theSwitch = _ref[1];
 ;alert(theBait);'>executar: theBait</div><br class='clear' /></div>
     <p>
-      But it's also helpful for dealing with functions that return multiple
-      values.
+      Mas também é bastante útil para lidar com funções que retornam multiplos valores.
     </p>
     <div class='code'><pre class="idle"><span class="FunctionName">weatherReport </span><span class="Keyword">=</span> <span class="FunctionArgument">(location)</span> <span class="Storage">-&gt;</span>
   <span class="Comment"><span class="Comment">#</span> Make an Ajax request to fetch the weather...</span>
@@ -1677,8 +1676,9 @@ weatherReport = function(location) {
 _ref = weatherReport("Berkeley, CA"), city = _ref[0], temp = _ref[1], forecast = _ref[2];
 ;alert(forecast);'>executar: forecast</div><br class='clear' /></div>
     <p>
-      Destructuring assignment can be used with any depth of array and object nesting,
-      to help pull out deeply nested properties.
+      Atribuição de troca (<em>Destructuring assignment</em>) pode ser usada com qualquer
+      profundidade de <em>array</em> ou aninhamento de objeto, para ajudar a extrair
+      propriedades profundamente aninhadas.
     </p>
     <div class='code'><pre class="idle">futurists <span class="Keyword">=</span>
   sculptor: <span class="String"><span class="String">&quot;</span>Umberto Boccioni<span class="String">&quot;</span></span>
@@ -1720,7 +1720,7 @@ futurists = {
 _ref = futurists.poet, name = _ref.name, (_ref1 = _ref.address, street = _ref1[0], city = _ref1[1]);
 ;alert(name + " - " + street);'>executar: name + " - " + street</div><br class='clear' /></div>
     <p>
-      Destructuring assignment can even be combined with splats.
+      Atribuição de troca pode até ser combinada com <em>splats</em>.
     </p>
     <div class='code'><pre class="idle">tag <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>&lt;impossible&gt;<span class="String">&quot;</span></span>
 
@@ -1747,21 +1747,22 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
 
     <p>
       <span id="fat_arrow" class="bookmark"></span>
-      <b class="header">Function binding</b>
-      In JavaScript, the <tt>this</tt> keyword is dynamically scoped to mean the
-      object that the current function is attached to. If you pass a function as
-      a callback or attach it to a different object, the original value of <tt>this</tt>
-      will be lost. If you're not familiar with this behavior,
-      <a href="http://www.digital-web.com/articles/scope_in_javascript/">this Digital Web article</a>
-      gives a good overview of the quirks.
+      <b class="header">Vinculação de Funções</b>
+      Em JavaScript, a palavra-chave <tt>this</tt> é dinamicamente "escopada" para
+      que o objeto seja referente a função da qual ele está vinculado. Se você passar
+      uma função como um <em>callback</em> ou vinculá-la a um objeto diferente, o
+      valor original de <tt>this</tt> será perdido. Se você não está familiarizado
+      com este comportamento,
+      <a href="http://www.digital-web.com/articles/scope_in_javascript/">este artigo</a>
+      fornece uma boa visão dessas peculiaridades.
     </p>
     <p>
-      The fat arrow <tt>=&gt;</tt> can be used to both define a function, and to bind
-      it to the current value of <tt>this</tt>, right on the spot. This is helpful
-      when using callback-based libraries like Prototype or jQuery, for creating
-      iterator functions to pass to <tt>each</tt>, or event-handler functions
-      to use with <tt>bind</tt>. Functions created with the fat arrow are able to access
-      properties of the <tt>this</tt> where they're defined.
+      A seta dupla <tt>=&gt;</tt> pode ser usada tanto para definir uma função quanto
+      para vinculá-la ao valor atual de <tt>this</tt> no lugar certo. Isto é útil
+      quando usando bibliotecas baseadas em <em>callbacks</em> como Prototype ou jQuery,
+      para criar funções iteradores para passar para <tt>each</tt>, ou para funções
+      manipuladoras de eventos usarem com <tt>bind</tt>. Funções criadas com a seta
+      dupla são capazes de acessar propriedades do <tt>this</tt> onde elas são definidas.
     </p>
     <div class='code'><pre class="idle"><span class="FunctionName">Account </span><span class="Keyword">=</span> <span class="FunctionArgument">(customer, cart)</span> <span class="Storage">-&gt;</span>
   <span class="Variable">@customer</span> <span class="Keyword">=</span> customer
@@ -1781,14 +1782,14 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
 };
 </pre><script>window.example29 = "Account = (customer, cart) ->\n  @customer = customer\n  @cart = cart\n\n  $('.shopping_cart').bind 'click', (event) =>\n    @customer.purchase @cart"</script><div class='minibutton load' onclick='javascript: loadConsole(example29);'>carregar</div><br class='clear' /></div>
     <p>
-      If we had used <tt>-&gt;</tt> in the callback above, <tt>@customer</tt> would
-      have referred to the undefined "customer" property of the DOM element,
-      and trying to call <tt>purchase()</tt> on it would have raised an exception.
+      Se tivéssemos usado <tt>-&gt;</tt> no <em>callback</em> acima, <tt>@customer</tt>
+      teria se referido à propriedade "customer" indefinida do elemento DOM, e tentado
+      chamar <tt>purchase()</tt> nela teria gerado uma exceção.
     </p>
     <p>
-      When used in a class definition, methods declared with the fat arrow will
-      be automatically bound to each instance of the class when the instance is
-      constructed.
+      Quando usados em uma definição de classe, métodos declarados com a seta dupla
+      serão automaticamente vinculados a cada instância da classe quando a instância
+      for construída.
     </p>
 
     <p>
