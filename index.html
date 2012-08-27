@@ -40,7 +40,7 @@
         <a href="#embedded">JavaScript Incorporado</a>
         <a href="#switch">Switch e Try/Catch</a>
         <a href="#comparisons">Comparações em Cadeia</a>
-        <a href="#strings">Interpolação, Blocos de Strings, e Blocos de Comentários</a>
+        <a href="#strings">Interpolação de String, Blocos de String e de Comentários</a>
         <a href="#regexes">Blocos de Expressões Regulares</a>
         <a href="#cake">Cake, e Cakefiles</a>
         <a href="#scripts">Tags de Script "text/coffeescript"</a>
@@ -1920,10 +1920,10 @@ healthy = (200 > cholesterol && cholesterol > 60);
 
     <p>
       <span id="strings" class="bookmark"></span>
-      <b class="header">String Interpolation, Block Strings, and Block Comments</b>
-      Ruby-style string interpolation is included in CoffeeScript. Double-quoted
-      strings allow for interpolated values, using <tt>#{ ... }</tt>,
-      and single-quoted strings are literal.
+      <b class="header">Interpolação de String, Blocos de String e Blocos de Comentário</b>
+      A interpolação de <em>string</em> no estilo Ruby está incluída no CoffeeScript.
+      <em>Strings</em> de áspas duplas permitem valores interpolados usando <tt>#{ ... }</tt>,
+      e áspas simples são apenas <em>strings</em> literais.
     </p>
     <div class='code'><pre class="idle">author <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>Wittgenstein<span class="String">&quot;</span></span>
 quote  <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>A picture is a fact. -- <span class="String"><span class="String">#{</span> author <span class="String">}</span></span><span class="String">&quot;</span></span>
@@ -1950,7 +1950,7 @@ quote = "A picture is a fact. -- " + author;
 sentence = "" + (22 / 7) + " is a decent approximation of π";
 ;alert(sentence);'>executar: sentence</div><br class='clear' /></div>
     <p>
-      Multiline strings are allowed in CoffeeScript.
+      <em>Strings</em> multi-linha são permitidas em CoffeeScript.
     </p>
     <div class='code'><pre class="idle">mobyDick <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>Call me Ishmael. Some years ago --</span>
 <span class="String"> never mind how long precisely -- having little</span>
@@ -1968,10 +1968,10 @@ mobyDick <span class="Keyword">=</span> <span class="String"><span class="String
 mobyDick = "Call me Ishmael. Some years ago -- never mind how long precisely -- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world...";
 ;alert(mobyDick);'>executar: mobyDick</div><br class='clear' /></div>
     <p>
-      Block strings can be used to hold formatted or indentation-sensitive text
-      (or, if you just don't feel like escaping quotes and apostrophes). The
-      indentation level that begins the block is maintained throughout, so
-      you can keep it all aligned with the body of your code.
+      Blocos de <em>strings</em> podem ser usadas para armazenar texto formatado
+      ou indentado (ou, se você apenas não gosta de escapar áspas e apóstrofos).
+      O nível de indentação que começa o bloco é mantido do começo ao fim, então
+      você pode manter tudo alinhado com o corpo do seu código.
     </p>
     <div class='code'><pre class="idle">html <span class="Keyword">=</span> <span class="String"><span class="String">&quot;&quot;&quot;</span></span>
 <span class="String">       &lt;strong&gt;</span>
@@ -1987,13 +1987,14 @@ html <span class="Keyword">=</span> <span class="String"><span class="String">&q
 html = "<strong>\n  cup of coffeescript\n</strong>";
 ;alert(html);'>executar: html</div><br class='clear' /></div>
     <p>
-      Double-quoted block strings, like other double-quoted strings, allow interpolation.
+      Blocos de <em>strings</em> de áspas duplas, assim como qualquer <em>string</em>
+      de áspas duplas, também permitem interpolação.
     </p>
     <p>
-      Sometimes you'd like to pass a block comment through to the generated
-      JavaScript. For example, when you need to embed a licensing header at
-      the top of a file. Block comments, which mirror the syntax for block strings,
-      are preserved in the generated code.
+      Às vezes você pode querer passar um bloco de comentário para o JavaScript
+      gerado. Por exemplo, quando você precisa embutir um cabeçalho de licenciamento
+      no topo de um arquivo. Comentários em bloco, que refletem a sintaxe de
+      <em>strings</em> em bloco, são preservados no código gerado.
     </p>
     <div class='code'><pre class="idle"><span class="Comment"><span class="Comment">###</span></span>
 <span class="Comment">CoffeeScript Compiler v1.3.3</span>
