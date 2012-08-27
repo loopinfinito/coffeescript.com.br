@@ -813,17 +813,17 @@ Expressions
     <p>
       <span id="switch" class="bookmark"></span>
       <b class="header">Switch/When/Else</b>
-      <b>Switch</b> statements in JavaScript are a bit awkward. You need to
-      remember to <b>break</b> at the end of every <b>case</b> statement to
-      avoid accidentally falling through to the default case.
-      CoffeeScript prevents accidental fall-through, and can convert the <tt>switch</tt>
-      into a returnable, assignable expression. The format is: <tt>switch</tt> condition,
-      <tt>when</tt> clauses, <tt>else</tt> the default case.
+      Instruções <b>switch</b> em JavaScript são um pouco inconvenientes. Você
+      se lembrar de incluir um <b>break</b> ao final de toda instrução <b>case</b>
+      para evitar de cair no <em>case</em> padrão (<b>default</b>) acidentalmente.
+      CoffeeScript impede essa caída acidental, e pode converter o <tt>switch</tt>
+      em expressões retornaveis e abribuíveis. O formato é: codição <tt>switch</tt>,
+      cláusulas <tt>when</tt> e cláusulas <tt>else</tt> como o <em>case</em> padrão.
     </p>
     <p>
-      As in Ruby, <b>switch</b> statements in CoffeeScript can take multiple
-      values for each <b>when</b> clause. If any of the values match, the clause
-      runs.
+      Como em Ruby, instruções <b>switch</b> em CoffeeScript podem ter multiplos
+      valores para cada cláusula <b>when</b>. Se qualquer um dos valores casar, a
+      cláusula é executada.
     </p>
     <%= code_for('switch') %>
 
