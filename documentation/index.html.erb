@@ -1402,29 +1402,33 @@ Expressions
 
     <p>
       <b class="header" style="margin-top: 20px;">0.9.5
-        <span class="timestamp"> &ndash; <small>Nov 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 nov 2010</small></span>
       </b>
-      0.9.5 should be considered the first release candidate for CoffeeScript 1.0.
-      There have been a large number of internal changes since the previous release,
-      many contributed from <b>satyr</b>'s <a href="http://github.com/satyr/coco">Coco</a>
-      dialect of CoffeeScript. Heregexes (extended regexes) were added. Functions
-      can now have default arguments. Class bodies are now executable code.
-      Improved syntax errors for invalid CoffeeScript. <tt>undefined</tt> now
-      works like <tt>null</tt>, and cannot be assigned a new value.
-      There was a precedence change with respect to single-line comprehensions:
-      <tt>result = i for i in list</tt><br /> used to parse as <tt>result = (i for i in list)</tt>
-      by default ... it now parses as <br /><tt>(result = i) for i in list</tt>.
+      A versão 0.9.5 deve ser considerada a primeira versão candidata a CoffeeScript 1.0.
+      Existiram um grande número de mudanças internas desde a última versão, muitos
+      contribuiram do dialeto CoffeeScript <a href="http://github.com/satyr/coco">Coco</a>.
+      <i>Heregexes</i> (<i>regexes</i> estendidas) foram adicionadas.
+      Funções agora podem ter valores padrão em seus argumentos.
+      Corpo das classes agora são código executável.
+      Melhorias nos erros de sintaxe para CoffeeScript inválido.
+      <tt>nudefined</tt> agora funciona como <tt>null</tt>, e não pode ser atribuído
+      a um novo valor.
+      Houveram mudanças nas regras de precedência em relação a <i>comprehensions single-line</i>:
+      <tt>result = i for i in list</tt><br /> era analisado (<i>parsed</i>) em <tt>result = (i for i in list)</tt>
+      por padrão ... agora é analisado (<i>parsed</i>) em <br /><tt>(result = i) for i in list</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.9.4
-        <span class="timestamp"> &ndash; <small>Sep 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 set 2010</small></span>
       </b>
-      CoffeeScript now uses appropriately-named temporary variables, and recycles
-      their references after use. Added <tt>require.extensions</tt> support for
-      <b>Node.js 0.3</b>. Loading CoffeeScript in the browser now adds just a
-      single <tt>CoffeeScript</tt> object to global scope.
-      Fixes for implicit object and block comment edge cases.
+      CoffeeScript agora usa melhores nomes de variáveis temporárias, e recicla
+      suas referências depois do uso.
+      Adicionado suporte a <tt>require.extensions</tt> para o <b>Node.js 0.3</b>.
+      Carregar CoffeeScript no navegador agora adiciona apenas um objeto <tt>CoffeeScript</tt>
+      no escopo global.
+      Correções de <i>bug</i> em objetos implícitos e comentários em bloco em alguns
+      casos extremos.
     </p>
 
     <p>
@@ -1659,11 +1663,11 @@ Expressions
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.0
-        <span class="timestamp"> &ndash; <small>Feb 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 fev 2010</small></span>
       </b>
-      CoffeeScript 0.5.0 is a major release, While there are no language changes,
-      the Ruby compiler has been removed in favor of a self-hosting
-      compiler written in pure CoffeeScript.
+      A versão 0.5.0 do CoffeScript é um grande lançamento (<i>major release</i>).
+      Ao mesmo tempo que não existe mudanças na linguagem, o compilador Ruby foi removido
+      em troca de um compilador escrito em CoffeeScript.
     </p>
 
     <p>

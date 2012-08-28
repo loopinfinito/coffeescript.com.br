@@ -120,7 +120,7 @@
     <p>
       A regra de ouro do CoffeeScript é: "<i>É apenas JavaScript</i>". O código
       compila para um JS equivalente, e não há uma interpretação em tempo de execução (runtime).
-      Você pode usar qualquer biblioteca JavaScript existente sem problemas de CoffeeScript (e vice-versa).
+      Você pode usar qualquer biblioteca JavaScript existente com CoffeeScript sem problemas (e vice-versa).
       A saída compilada é legível e bem impressa, passa pelo <a href="http://www.javascriptlint.com/">JavaScript Lint</a>
       sem advertências, funcionará em qualquer <em>runtime</em> JavaScript, e tende a
       executar tão ou mais rápido que o JavaScript equivalente escrito a mão.
@@ -270,16 +270,16 @@ cubes = (function() {
     <p>
       O próprio compilador CoffeeScript é
       <a href="documentation/docs/grammar.html">escrito em CoffeeScript</a>,
-      usando o <a href="http://jison.org">gerador analítico Jison</a>. A
-      versão de linha de comando de <tt>coffee</tt> está disponível como um
+      usando o <a href="http://jison.org">gerador de analisador (<i>parser</i>) Jison</a>. A
+      versão linha de comando <tt>coffee</tt> está disponível como um
       utilitário <a href="http://nodejs.org/">Node.js</a>. O
-      <a href="extras/coffee-script.js">núcleo de compilador</a> entretanto, não
+      <a href="extras/coffee-script.js">compilador</a> entretanto, não
       depende do Node, e pode ser executado em qualquer ambiente JavaScript, ou no
       navegador (veja "Experimente CoffeeScript", acima).
     </p>
 
     <p>
-      Para instalar, primeiramente tenha certeza de que você tenha uma cópia da última
+      Para instalar, primeiramente tenha certeza de que tem uma cópia da última
       versão estável do <a href="http://nodejs.org/">Node.js</a>, e do <a href="http://npmjs.org">npm</a>
       (o Gerenciador de Pacotes do Node – <em>Node Package Manager</em>). Você então
       poderá instalar o CoffeeScript com o npm:
@@ -289,11 +289,11 @@ cubes = (function() {
 npm install -g coffee-script</pre>
 
     <p>
-      (Deixe de fora o <tt>-g</tt> se você não quiser instalar globalmente.)
+      (Deixe de fora o <tt>-g</tt> caso não queira instalar globalmente.)
     </p>
 
     <p>
-      Se você preferir instalar a versão mais recente do CoffeeScript, você pode clonar o
+      Se preferir instalar a versão mais recente do CoffeeScript, você pode clonar o
       <a href="http://github.com/jashkenas/coffee-script">repositório do código fonte</a>
       do CoffeeScript no GitHub, ou fazer o download do
       <a href="http://github.com/jashkenas/coffee-script/tarball/master">código fonte</a> diretamente.
@@ -424,7 +424,7 @@ Expressions
       <tr>
         <td><code>--nodejs</code></td>
         <td>
-          O <tt>node</tt> executável tem algumas opções úteis que você pode especificar,
+          O executável <tt>node</tt> tem algumas opções úteis que você pode especificar,
           como <tt>--debug</tt>, <tt>--debug-brk</tt> e <tt>--max-stack-size</tt>. Use esta
           <em>flag</em> para passar as opções diretamente ao Node.js.
         </td>
@@ -486,8 +486,8 @@ Expressions
       </i>
     <p>
       Primeiramente, o básico: CoffeeScript usa espaços em branco para delimitar blocos de código.
-      Você não precisa usar ponto-e-vígulas <tt>;</tt> ao témino de uma expressão,
-      terminar a linha terá o mesmo resultado (embora ainda seja possível utilizar ponto-e-vígula
+      Você não precisa usar ponto-e-vígulas <tt>;</tt> ao término de uma expressão,
+      terminar a linha terá o mesmo resultado (embora ainda seja possível utilizar ponto-e-vírgula
       para delimitar várias expressões em uma mesma linha).
       Em vez de usar chaves <tt>{ }</tt> para agrupar blocos de código em <a href="#literals">funções</a>,
       <a href="#conditionals"><em>if</em></a>,
@@ -561,7 +561,7 @@ fill = function(container, liquid) {
     <p>
       <span id="objects_and_arrays" class="bookmark"></span>
       <b class="header">Objetos e Arrays</b>
-      Os literias de CoffeeScript para objtos e <em>arrays</em> se parecem bastante
+      Os literias de CoffeeScript para objetos e <em>arrays</em> se parecem bastante
       com seus primos JavaScript. Quando cada propriedade é listada em sua própria
       linha, as vírgulas são opcionais. Objetos devem ser criados usando indentação
       em vez de chaves explícitas, similar ao <a href="http://yaml.org">YAML</a>.
@@ -630,9 +630,9 @@ kids = {
 ;alert(song.join(" ... "));'>executar: song.join(" ... ")</div><br class='clear' /></div>
     <p>
       Em JavaScript, você não pode usar palavras reservadas, como <tt>class</tt>, como
-      propriedades de um objeto, sem envolvê-las com áspas como <em>strings</em>.
-      CoffeeScript reconhece palavras reservadas usadas como chave (key) em um objeto
-      e coloca áspas nelas para você, então você não precisa se preocupar com isso
+      propriedades de um objeto, sem envolvê-las com aspas como <em>strings</em>.
+      CoffeeScript reconhece palavras reservadas usadas como chave (<i>key</i>) em um objeto
+      e coloca aspas nelas para você, então você não precisa se preocupar com isso
       (por exemplo, quando usando jQuery).
     </p>
     <div class='code'><pre class="idle">$(<span class="String"><span class="String">'</span>.account<span class="String">'</span></span>).attr class: <span class="String"><span class="String">'</span>active<span class="String">'</span></span>
@@ -695,7 +695,7 @@ inner = changeNumbers();
       Este comportamento é efetivamente idêntico ao escopo de Ruby para variáveis
       locais. Pelo fato de você não ter acesso direto à palavra-chave <tt>var</tt>,
       é impossível esconder uma variável externa de propósito, você deve apenas
-      se referir a ela. Então tenha cuidado com o reúso de um nome de variável
+      se referir a ela. Então tenha cuidado com o reuso de um nome de variável
       externa acidentalmente, principalmente se você estiver escrevendo uma função
       profundamente aninhada.
     </p>
@@ -704,7 +704,7 @@ inner = changeNumbers();
       empacotada em uma função anônima: <tt>(function(){ ... })();</tt> Este
       empacotador seguro, combinado com a geração automática da palavra-chave
       <tt>var</tt>, faz com que seja extremamente difícil de poluir os espaços
-      de nomes (namespace) globais por acidente.
+      de nomes (<i>namespaces</i>) globais por acidente.
     </p>
     <p>
       Se você quiser criar variáveis de nível superior para outros scripts usarem,
@@ -842,7 +842,7 @@ alert("The Field: " + rest);
       <span id="loops" class="bookmark"></span>
       <b class="header">Laços e Compreensões de Listas</b>
       A maioria dos laços (<em>loops</em>) que você escreverá em CoffeeScript serão
-      <b>compreensões de listas</b> em <em>arrays</em>, objetos, e intervalos (<em>ranges</em>).
+      <b>compreensões de listas</b> (<i>list comprehensions</i>) em <em>arrays</em>, objetos, e intervalos (<em>ranges</em>).
       Compreensões de listas substituem (e compilam para) laços <b>for</b>, com
       cláusulas <em>guard</em> opcionais e o valor atual do índice do <em>array</em>.
       Diferente de laços, as <b>compreensões</b> são expressões, e podem ser retornadas
@@ -916,10 +916,10 @@ countdown = (function() {
 ;alert(countdown);'>executar: countdown</div><br class='clear' /></div>
     <p>
       Peceba que, pelo fato de estarmos atribuindo o valor das compreensões de lista
-      a uma variável no exemplo acima, CoffeeScript coleta o resultado de cada
-      iteração em um <em>array</em>. Às vezes funções terminam com laços que
-      servem apenas para rodar no contexto da própria função. Tenha cuidado para
-      não retornar acidentalmente os resultados da compreensão, nestes casos
+      (<i>list comprehension</i>) a uma variável no exemplo acima, CoffeeScript coleta
+      o resultado de cada iteração em um <em>array</em>. Às vezes funções terminam com
+      laços que servem apenas para rodar no contexto da própria função. Tenha
+      cuidado para não retornar acidentalmente os resultados da compreensão, nestes casos
       apenas adicione um valor de retorno significativo &mdash; como <tt>true</tt>
       &mdash; ou <tt>null</tt>, ao final da sua função.
     </p>
@@ -973,9 +973,9 @@ ages = (function() {
 })();
 ;alert(ages.join(", "));'>executar: ages.join(", ")</div><br class='clear' /></div>
     <p>
-      Se você desejasse iterar somente sobre as chaves (<em>keys</em>) que são
-      definidas no próprio objeto, adicionando uma verificação <tt>hasOwnProperty</tt>
-      para evitar propriedades que possam ter sido herdadas do protótipo, use<br />
+      Se desejar iterar somente sobre as chaves (<em>keys</em>) que são
+      definidas no próprio objeto adicione uma verificação <tt>hasOwnProperty</tt>
+      ,para evitar propriedades que possam ter sido herdadas do protótipo use<br />
       <tt>for own key, value of object</tt>
     </p>
     <p>
@@ -1043,7 +1043,7 @@ lyrics = (function() {
     </p>
     <p>
       Quando usando um laço JavaScript para gerar funções, é comum inserir um
-      agrupamento (<em>wrapper</em>) a fim de garantir que as variáveis do laço estão
+      invólucro (<em>wrapper</em>) a fim de garantir que as variáveis do laço estejam
       corretamente fechadas, e todas as funções geradas não compartilhem apenas
       os valores finais. CoffeeScript fornece a palavra-chave <tt>do</tt>, que invoca
       imediatamente uma função passada com seus respectivos argumentos.
@@ -1188,14 +1188,11 @@ eldest = 24 > 21 ? "Liz" : "Ike";
     <p>
       Apesar de funções sempre retornarem seu valor final, é possível e encorajado
       retornar o mais depressa possível de um corpo de função escrevendo explicitamente
-      <em>return</em> (<tt>return value</tt>),
-      Even though functions will always return their final value, it's both possible
-      and encouraged to return early from a function body writing out the explicit
-      return (<tt>return value</tt>), quando você sabe que terminou.
+      <em>return</em> (<tt>return value</tt>).
     </p>
     <p>
-      Pelo fato de declarações de variável ocorrerem no topo do escopo, atribuição
-      pode ser usada dentro de expressões, até mesmo para variáveis que não foram
+      Pelo fato das declarações de variável ocorrerem no topo do escopo,
+      pode ser usado atribuição dentro de expressões, até mesmo para variáveis que não foram
       vistas antes:
     </p>
     <div class='code'><pre class="idle">six <span class="Keyword">=</span> (one <span class="Keyword">=</span> <span class="Number">1</span>) <span class="Keyword">+</span> (two <span class="Keyword">=</span> <span class="Number">2</span>) <span class="Keyword">+</span> (three <span class="Keyword">=</span> <span class="Number">3</span>)
@@ -1209,7 +1206,7 @@ six <span class="Keyword">=</span> (one <span class="Keyword">=</span> <span cla
 six = (one = 1) + (two = 2) + (three = 3);
 ;alert(six);'>executar: six</div><br class='clear' /></div>
     <p>
-      Coisas que poderiam, de outra maneira, ser declarações em JavaScript, quando
+      Coisas que poderiam, de outra maneira, ser declarações em JavaScript quando
       usadas como uma parte de uma expressão em CoffeeScript, são convertidas em
       expressões agrupando-as em um bloco. Isto permite a você fazer coisas úteis,
       como atribuir o resultado de uma compreensão de lista a uma variável:
@@ -1448,7 +1445,7 @@ zip <span class="Keyword">=</span> <span class="Keyword">typeof</span> lottery.d
       <a href="http://prototypejs.org/">Prototype.js</a>,
       <a href="http://jsclass.jcoglan.com/">JS.Class</a>, etc.
 
-      As bibliotecas oferecem um "açúcar sintático" (), e a herança padrão seria
+      As bibliotecas oferecem um "açúcar sintático" (<i>syntatic sugar</i>), e a herança padrão seria
       completamente utilizável se não fosse por umas pequenas exceções:
       é estranho chamar a <b>superclasse</b> (a implementação do protótipo do objeto da
       função atual), e é estranho utilizar a cadeia de protótipo corretamente.
@@ -1461,7 +1458,7 @@ zip <span class="Keyword">=</span> <span class="Keyword">typeof</span> lottery.d
     </p>
     <p>
       Funções construtoras são nomeadas, para melhor apoiar os rastreamentos úteis
-      de pilha. Na primeira classe no exemplo abaixo, <tt>this.constructor.name</tt> is "Animal".
+      de pilha (<i>stack trace</i>. Na primeira classe no exemplo abaixo, <tt>this.constructor.name</tt> is "Animal".
     </p>
     <div class='code'><pre class="idle"><span class="Storage">class</span> <span class="TypeName">Animal</span>
   <span class="FunctionName">constructor</span><span class="Keyword">:</span> <span class="FunctionArgument">(@name)</span> <span class="Storage">-&gt;</span>
@@ -1699,7 +1696,7 @@ weatherReport = function(location) {
 _ref = weatherReport("Berkeley, CA"), city = _ref[0], temp = _ref[1], forecast = _ref[2];
 ;alert(forecast);'>executar: forecast</div><br class='clear' /></div>
     <p>
-      Atribuição de troca (<em>Destructuring assignment</em>) pode ser usada com qualquer
+      Atribuição de troca (<i>Destructuring assignment</i>) pode ser usada com qualquer
       profundidade de <em>array</em> ou aninhamento de objeto, para ajudar a extrair
       propriedades profundamente aninhadas.
     </p>
@@ -1773,7 +1770,7 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
       <b class="header">Vinculação de Funções</b>
       Em JavaScript, a palavra-chave <tt>this</tt> é dinamicamente "escopada" para
       que o objeto seja referente a função da qual ele está vinculado. Se você passar
-      uma função como um <em>callback</em> ou vinculá-la a um objeto diferente, o
+      uma função como um <i>callback</i> ou vinculá-la a um objeto diferente, o
       valor original de <tt>this</tt> será perdido. Se você não está familiarizado
       com este comportamento,
       <a href="http://www.digital-web.com/articles/scope_in_javascript/">este artigo</a>
@@ -1782,8 +1779,8 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
     <p>
       A seta dupla <tt>=&gt;</tt> pode ser usada tanto para definir uma função quanto
       para vinculá-la ao valor atual de <tt>this</tt> no lugar certo. Isto é útil
-      quando usando bibliotecas baseadas em <em>callbacks</em> como Prototype ou jQuery,
-      para criar funções iteradores para passar para <tt>each</tt>, ou para funções
+      quando usamos bibliotecas baseadas em <em>callbacks</em> como Prototype ou jQuery,
+      para criar funções iteradoras para passar para <tt>each</tt>, ou para funções
       manipuladoras de eventos usarem com <tt>bind</tt>. Funções criadas com a seta
       dupla são capazes de acessar propriedades do <tt>this</tt> onde elas são definidas.
     </p>
@@ -1805,7 +1802,7 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
 };
 </pre><script>window.example29 = "Account = (customer, cart) ->\n  @customer = customer\n  @cart = cart\n\n  $('.shopping_cart').bind 'click', (event) =>\n    @customer.purchase @cart"</script><div class='minibutton load' onclick='javascript: loadConsole(example29);'>carregar</div><br class='clear' /></div>
     <p>
-      Se tivéssemos usado <tt>-&gt;</tt> no <em>callback</em> acima, <tt>@customer</tt>
+      Se tivéssemos usado <tt>-&gt;</tt> no <i>callback</i> acima, <tt>@customer</tt>
       teria se referido à propriedade "customer" indefinida do elemento DOM, e tentado
       chamar <tt>purchase()</tt> nela teria gerado uma exceção.
     </p>
@@ -1818,7 +1815,7 @@ _ref = tag.split(""), open = _ref[0], contents = 3 <= _ref.length ? __slice.call
     <p>
       <span id="embedded" class="bookmark"></span>
       <b class="header">JavaScript Embutido</b>
-      Esperançosamente, você nunca precisará utilizar isso, mas se você precisar
+      Provavelmente, você nunca precisará utilizar isso, mas se você precisar
       intercalar fragmentos de JavaScript dentro do seu CoffeeScript, pode utilizar
       crases para incluí-los diretamente.
     </p>
@@ -1845,9 +1842,9 @@ hi = function() {
       <b class="header">Switch/When/Else</b>
       Instruções <b>switch</b> em JavaScript são um pouco inconvenientes. Você
       se lembrar de incluir um <b>break</b> ao final de toda instrução <b>case</b>
-      para evitar de cair no <em>case</em> padrão (<b>default</b>) acidentalmente.
+      para evitar de cair no <em>case</em> padrão (<i>default</i>) acidentalmente.
       CoffeeScript impede essa caída acidental, e pode converter o <tt>switch</tt>
-      em expressões retornaveis e abribuíveis. O formato é: codição <tt>switch</tt>,
+      em expressões retornáveis e atribuíveis. O formato é: codição <tt>switch</tt>,
       cláusulas <tt>when</tt> e cláusulas <tt>else</tt> como o <em>case</em> padrão.
     </p>
     <p>
@@ -1945,8 +1942,8 @@ healthy = (200 > cholesterol && cholesterol > 60);
       <span id="strings" class="bookmark"></span>
       <b class="header">Interpolação de String, Blocos de String e Blocos de Comentário</b>
       A interpolação de <em>string</em> no estilo Ruby está incluída no CoffeeScript.
-      <em>Strings</em> de áspas duplas permitem valores interpolados usando <tt>#{ ... }</tt>,
-      e áspas simples são apenas <em>strings</em> literais.
+      <em>Strings</em> de aspas duplas permitem valores interpolados usando <tt>#{ ... }</tt>,
+      e aspas simples são apenas <em>strings</em> literais.
     </p>
     <div class='code'><pre class="idle">author <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>Wittgenstein<span class="String">&quot;</span></span>
 quote  <span class="Keyword">=</span> <span class="String"><span class="String">&quot;</span>A picture is a fact. -- <span class="String"><span class="String">#{</span> author <span class="String">}</span></span><span class="String">&quot;</span></span>
@@ -1992,7 +1989,7 @@ mobyDick = "Call me Ishmael. Some years ago -- never mind how long precisely -- 
 ;alert(mobyDick);'>executar: mobyDick</div><br class='clear' /></div>
     <p>
       Blocos de <em>strings</em> podem ser usadas para armazenar texto formatado
-      ou indentado (ou, se você apenas não gosta de escapar áspas e apóstrofos).
+      ou indentado (ou, se você apenas não gosta de escapar aspas e apóstrofos).
       O nível de indentação que começa o bloco é mantido do começo ao fim, então
       você pode manter tudo alinhado com o corpo do seu código.
     </p>
@@ -2010,8 +2007,8 @@ html <span class="Keyword">=</span> <span class="String"><span class="String">&q
 html = "<strong>\n  cup of coffeescript\n</strong>";
 ;alert(html);'>executar: html</div><br class='clear' /></div>
     <p>
-      Blocos de <em>strings</em> de áspas duplas, assim como qualquer <em>string</em>
-      de áspas duplas, também permitem interpolação.
+      Blocos de <em>strings</em> de aspas duplas, assim como qualquer <em>string</em>
+      de aspas duplas, também permitem interpolação.
     </p>
     <p>
       Às vezes você pode querer passar um bloco de comentário para o JavaScript
@@ -2036,10 +2033,10 @@ html = "<strong>\n  cup of coffeescript\n</strong>";
     <p>
       <span id="regexes" class="bookmark"></span>
       <b class="header">Blocos de Expressões Regulares</b>
-      Similarmente aos blocos de <em>strings</em> e comentários, CoffeeScript também
+      De forma similar aos blocos de <em>strings</em> e comentários, CoffeeScript também
       suporta blocos de expressões regulares (regexes) &mdash; expressões regulares
       extendidas que ignoram espaços em branco internos e que podem conter comentários
-      e interpolação. Modelado depois do modificador <tt>/x</tt> de Perl, os blocos de
+      e interpolação. Modelado de forma similiar ao modificador <tt>/x</tt> de Perl, os blocos de
       expressão regular do CoffeeScript são delimitados por <tt>///</tt> e fazem com
       que as expressões regulares se tornem legíveis. Veja o exemplo abaixo:
     </p>
@@ -2112,7 +2109,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <tt>build</tt> antes de <tt>test</tt>, você pode utilizar a função <tt>invoke</tt>:
       <tt>invoke 'build'</tt>. Tarefas <em>cake</em> são uma maneira minimalista de
       expor suas funções CoffeeScript na linha de comando, então
-      <a href="documentation/docs/cake.html">não espere nenhuma extravagância</a>.
+      <a href="documentation/docs/cake.html">não nada muito extravagante</a>.
       Se você precisa de dependências, ou de <em>callbacks</em> assíncronos, é melhor
       você mesmo colocá-los em seu código &mdash; e não a tarefa <em>cake</em>.
     </p>
@@ -2123,7 +2120,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
     </h2>
 
     <p>
-      Enquanto não é recomendável para uso em produção, códigos CoffeeScript podem ser
+      Mesmo não sendo recomendável para uso em produção, códigos CoffeeScript podem ser
       incluídos diretamente no navegador usando <em>tags</em> <tt>&lt;script type="text/coffeescript"&gt;</tt>.
       O código fonte inclui uma versão compactada e minificada do compilador
       (<a href="extras/coffee-script.js">Faça o download da versão atual, 39k em gzip</a>)
@@ -2222,7 +2219,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </li>
       <li>
         <a href="http://pow.cx/">Pow</a> do <b>sstephenson</b>,
-        um servidor Rack zerado, com código fonte anotado compreensivelmente.
+        um servidor Rack, com código fonte anotado de forma compreensiva.
       </li>
       <li>
         <a href="http://riakjs.org/">riak-js</a> do <b>frank06</b>, um cliente Node.js para
@@ -2231,14 +2228,14 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </li>
       <li>
         <a href="https://github.com/technoweenie/coffee-resque">Coffee-Resque</a> do <b>technoweenie</b>,
-        uma porta de <a href="https://github.com/defunkt/resque">Resque</a> para Node.js.
+        um <i>port</i> do <a href="https://github.com/defunkt/resque">Resque</a> para Node.js.
       </li>
       <li>
         <a href="http://zombie.labnotes.org/">Zombie.js</a> do <b>assaf</b>,
         uma biblioteca sem chefe, <em>full-stack</em>, <em>faux-browser</em> de teste para Node.js.
       </li>
       <li>
-        <a href="documentation/docs/underscore.html">Underscore.coffee</a> do <b>jashkenas</b>, uma porta
+        <a href="documentation/docs/underscore.html">Underscore.coffee</a> do <b>jashkenas</b>, um <i>port</i>
         da biblioteca <a href="http://documentcloud.github.com/underscore/">Underscore.js</a>
         de funções <em>helpers</em>.
       </li>
@@ -2278,11 +2275,11 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </li>
       <li>
         <a href="https://groups.google.com/forum/#!forum/coffeescript">CoffeeScript Google Group</a><br />
-        Se você quiser fazer uma pergunta, a lista de emails é um bom lugar para arranjar ajuda.
+        Se você quiser fazer uma pergunta, a lista de e-mails é um bom lugar para arranjar ajuda.
       </li>
       <li>
         <a href="http://github.com/jashkenas/coffee-script/wiki">O Wiki CoffeeScript</a><br />
-        Se você já aprendeu coisa útil ou truque de puro CoffeeScript, ou fez alguma pegadinha
+        Se você já aprendeu algo útil ou algum truque com CoffeeScript, ou fez alguma pegadinha
         &mdash; compartilhe no wiki.
         O wiki também serve como um diretório de
         <a href="http://github.com/jashkenas/coffee-script/wiki/Text-editor-plugins">extensões de editores de texto</a>,
@@ -2575,29 +2572,33 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
 
     <p>
       <b class="header" style="margin-top: 20px;">0.9.5
-        <span class="timestamp"> &ndash; <small>Nov 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 nov 2010</small></span>
       </b>
-      0.9.5 should be considered the first release candidate for CoffeeScript 1.0.
-      There have been a large number of internal changes since the previous release,
-      many contributed from <b>satyr</b>'s <a href="http://github.com/satyr/coco">Coco</a>
-      dialect of CoffeeScript. Heregexes (extended regexes) were added. Functions
-      can now have default arguments. Class bodies are now executable code.
-      Improved syntax errors for invalid CoffeeScript. <tt>undefined</tt> now
-      works like <tt>null</tt>, and cannot be assigned a new value.
-      There was a precedence change with respect to single-line comprehensions:
-      <tt>result = i for i in list</tt><br /> used to parse as <tt>result = (i for i in list)</tt>
-      by default ... it now parses as <br /><tt>(result = i) for i in list</tt>.
+      A versão 0.9.5 deve ser considerada a primeira versão candidata a CoffeeScript 1.0.
+      Existiram um grande número de mudanças internas desde a última versão, muitos
+      contribuiram do dialeto CoffeeScript <a href="http://github.com/satyr/coco">Coco</a>.
+      <i>Heregexes</i> (<i>regexes</i> estendidas) foram adicionadas.
+      Funções agora podem ter valores padrão em seus argumentos.
+      Corpo das classes agora são código executável.
+      Melhorias nos erros de sintaxe para CoffeeScript inválido.
+      <tt>nudefined</tt> agora funciona como <tt>null</tt>, e não pode ser atribuído
+      a um novo valor.
+      Houveram mudanças nas regras de precedência em relação a <i>comprehensions single-line</i>:
+      <tt>result = i for i in list</tt><br /> era analisado (<i>parsed</i>) em <tt>result = (i for i in list)</tt>
+      por padrão ... agora é analisado (<i>parsed</i>) em <br /><tt>(result = i) for i in list</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.9.4
-        <span class="timestamp"> &ndash; <small>Sep 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 set 2010</small></span>
       </b>
-      CoffeeScript now uses appropriately-named temporary variables, and recycles
-      their references after use. Added <tt>require.extensions</tt> support for
-      <b>Node.js 0.3</b>. Loading CoffeeScript in the browser now adds just a
-      single <tt>CoffeeScript</tt> object to global scope.
-      Fixes for implicit object and block comment edge cases.
+      CoffeeScript agora usa melhores nomes de variáveis temporárias, e recicla
+      suas referências depois do uso.
+      Adicionado suporte a <tt>require.extensions</tt> para o <b>Node.js 0.3</b>.
+      Carregar CoffeeScript no navegador agora adiciona apenas um objeto <tt>CoffeeScript</tt>
+      no escopo global.
+      Correções de <i>bug</i> em objetos implícitos e comentários em bloco em alguns
+      casos extremos.
     </p>
 
     <p>
@@ -2832,11 +2833,11 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.0
-        <span class="timestamp"> &ndash; <small>Feb 21, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>21 fev 2010</small></span>
       </b>
-      CoffeeScript 0.5.0 is a major release, While there are no language changes,
-      the Ruby compiler has been removed in favor of a self-hosting
-      compiler written in pure CoffeeScript.
+      A versão 0.5.0 do CoffeScript é um grande lançamento (<i>major release</i>).
+      Ao mesmo tempo que não existe mudanças na linguagem, o compilador Ruby foi removido
+      em troca de um compilador escrito em CoffeeScript.
     </p>
 
     <p>
