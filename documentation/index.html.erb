@@ -1134,10 +1134,6 @@ Expressions
       </b>
       <ul>
         <li>
-          Due to the new semantics of JavaScript's strict mode, CoffeeScript no
-          longer guarantees that constructor functions have names in all runtimes.
-          See <a href="https://github.com/jashkenas/coffee-script/issues/2052">#2052</a>
-          for discussion.
           Devido a nova semântica do <i>Strict Mode</i> do JavaScript, CoffeeScript
           não pode mais garantir que as funções contrutoras irão ter nomes em todos
           os ambientes de execução (<i>runtime</i>).
@@ -1145,8 +1141,6 @@ Expressions
           para discutir a respeito.
         </li>
         <li>
-          Inside of a nested function inside of an instance method, it's now possible
-          to call <tt>super</tt> more reliably (walks recursively up).
           Dentro de uma funções aninhada dentro de um método de instância, agora
           é possível chamar <tt>super</tt> de forma mais confiável (percorre de
           forma recursiva para cima).
@@ -1156,7 +1150,6 @@ Expressions
           que outras variáveis locais.
         </li>
         <li>
-          Fix for splats nested within the LHS of destructuring assignment.
           Correção em <i>splats</i> aninhadas dentro de atribuições de
           desestruturação LSH.
         </li>
