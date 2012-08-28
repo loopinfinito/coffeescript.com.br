@@ -20,32 +20,33 @@
                                                         |_|
 
 
-  CoffeeScript is a little language that compiles into JavaScript.
+  CoffeeScript é uma pequena linguagem que compila para JavaScript.
 
-  Install Node.js, and then the CoffeeScript compiler:
+  Instale o Node.js, e então o compilador CoffeeScript:
   sudo bin/cake install
 
-  Or, if you have the Node Package Manager installed:
+  Ou, caso você tenha o Node Package Manager instalado:
   npm install -g coffee-script
-  (Leave off the -g if you don't wish to install globally.)
+  (Não use a opção -g caso não queira instalar de forma global.)
 
-  Execute a script:
+  Execute um script:
   coffee /path/to/script.coffee
 
-  Compile a script:
+  Compile um script:
   coffee -c /path/to/script.coffee
 
   For documentation, usage, and examples, see:
-  http://coffeescript.org/
+  Para documentação, uso e exemplos:
+  http://coffeescript.com.br/
 
-  To suggest a feature, report a bug, or general discussion:
+  Para sugerir uma nova feature, reportar um bug, ou acompanhar discussões em geral sobre a linguagem:
   http://github.com/jashkenas/coffee-script/issues/
 
-  If you'd like to chat, drop by #coffeescript on Freenode IRC,
-  or on webchat.freenode.net.
+  Se você deseja conversar, entre no canal do IRC #coffeescript na Freenode,
+  ou em webchat.freenode.net.
 
-  The source repository:
+  O repostório do código:
   git://github.com/jashkenas/coffee-script.git
 
-  All contributors are listed here:
+  Todos que contribuiram estão listados aqui:
   http://github.com/jashkenas/coffee-script/contributors
