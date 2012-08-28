@@ -2274,7 +2274,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
 
     <h2>
       <span id="changelog" class="bookmark"></span>
-      Change Log
+      Log de mudanças
     </h2>
 
     <p>
@@ -2650,89 +2650,97 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       of <tt>while</tt> loops. <tt>switch</tt> statements are now allowed without
       switch object clauses. Compatible
       with Node.js <b>v0.1.95</b>.
+
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.6.1
         <span class="timestamp"> &ndash; <small>Apr 12, 2010</small></span>
       </b>
-      Upgraded CoffeeScript for compatibility with the new Node.js <b>v0.1.90</b>
-      series.
+      Atualização do CoffeeScript para compatibilidade com o novo Node.js <b>v0.1.90</b>
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.6.0
-        <span class="timestamp"> &ndash; <small>Apr 3, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>3 abr 2010</small></span>
       </b>
-      Trailing commas are now allowed, a-la Python. Static
-      properties may be assigned directly within class definitions,
-      using <tt>@property</tt> notation.
+      Vírgulas no fim das linhas agora são permitidas, a-la Python.
+      Propriedades estáticas agora podem ser atribuídas dentro das definições
+      de classes, usando a notação <tt>@property</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.6
-        <span class="timestamp"> &ndash; <small>Mar 23, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>23 mar 2010</small></span>
       </b>
-      Interpolation can now be used within regular expressions and heredocs, as well as
-      strings. Added the <tt>&lt;-</tt> bind operator.
-      Allowing assignment to half-expressions instead of special <tt>||=</tt>-style
-      operators. The arguments object is no longer automatically converted into
-      an array. After requiring <tt>coffee-script</tt>, Node.js can now directly
-      load <tt>.coffee</tt> files, thanks to <b>registerExtension</b>. Multiple
-      splats can now be used in function calls, arrays, and pattern matching.
+      Interpolação agora pode ser usada dentro de expressões regulares and
+      <i>heredocs</i>, assim como em <i>strings</i>.
+      Adicionado o operador <tt>&lt;-</tt> para <i>binding</i>.
+      Atribuição de meia-expressões agora são permitidas ao invés do <tt>||=</tt>.
+      O objeto arguments não é mais convertido automaticamente em <i>array</i>.
+      Após o <i>require</i>, Node.js pode diretamente carregar arquivos
+      <tt>.coffee</tt>, graças a <b>registerExtension</b>.
+      <i>Splats</i> múltiplos agoram podem ser usados nas chamadas de funções,
+      <i>arrays</i> e em combinação de padrões (<i>pattern matching</i>).
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.5
-        <span class="timestamp"> &ndash; <small>Mar 8, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>8 mar 2010</small></span>
       </b>
-      String interpolation, contributed by
+      Interpolação de <i>strings</i>, contribuído por
       <a href="http://github.com/StanAngeloff">Stan Angeloff</a>.
-      Since <tt>--run</tt> has been the default since <b>0.5.3</b>, updating
-      <tt>--stdio</tt> and <tt>--eval</tt> to run by default, pass <tt>--compile</tt>
-      as well if you'd like to print the result.
+      Uma vez que <tt>--run</tt> está ativo por padrão desde a versão <b>0.5.3</b>,
+      atualiza <tt>--stdio</tt> e <tt>--eval</tt> para também rodarem por padrão,
+      passe a <i>flag</i> <tt>compile</tt> se quiser também imprimir o resultado.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.4
-        <span class="timestamp"> &ndash; <small>Mar 3, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>3 mar 2010</small></span>
       </b>
-      Bugfix that corrects the Node.js global constants <tt>__filename</tt> and
-      <tt>__dirname</tt>. Tweaks for more flexible parsing of nested function
-      literals and improperly-indented comments. Updates for the latest Node.js API.
+      Correção de bug que corrige as constantes globais <tt>__filename</tt> e
+      <tt>__dirname</tt> do Node.js.
+      Pequenas alterações para uma análise sintática mais flexível de funções
+      aninhadas e comentários mal identados.
+      Atualizações para a última API do Node.js.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.3
-        <span class="timestamp"> &ndash; <small>Feb 27, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>27 fev 2010</small></span>
       </b>
-      CoffeeScript now has a syntax for defining classes. Many of the core
-      components (Nodes, Lexer, Rewriter, Scope, Optparse) are using them.
-      Cakefiles can use <tt>optparse.coffee</tt> to define options for tasks.
-      <tt>--run</tt> is now the default flag for the <tt>coffee</tt> command,
-      use <tt>--compile</tt> to save JavaScripts. Bugfix for an ambiguity between
-      RegExp literals and chained divisions.
+      CoffeeScript agora tem uma sintaxe para definição de classes. Muitos dos
+      componentes do <i>core</i> (Node, Lexer, Rewriter, Scope, Optparse) estão
+      a usando.
+      Cakefiles pode usar <tt>optparse.coffee</tt> para definir opções para
+      <i>tasks</i>.
+      <tt>--run</tt> agora é a <i>flag</i> padrão para o comando <tt>coffee</tt>,
+      use <tt>--compile</tt> para salvar JavaScripts.
+      Correção de bug em uma ambiguidade entre RegExp literais e divisões encadeadas.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.2
-        <span class="timestamp"> &ndash; <small>Feb 25, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>25 fev 2010</small></span>
       </b>
-      Added a compressed version of the compiler for inclusion in web pages as
-      <br  /><tt>extras/coffee-script.js</tt>. It'll automatically run any script tags
-      with type <tt>text/coffeescript</tt> for you. Added a <tt>--stdio</tt> option
-      to the <tt>coffee</tt> command, for piped-in compiles.
+      Adicinonada uma versão comprimida do compilador para inclusão em páginas
+      web como <br /><tt>extras/coffee-script.js</tt>. Ele irá automaticamente
+      rodar qualquer <i>tag</i> de <i>script</i> do tipo <tt>text/coffeescript</tt>.
+      Adiciona a opção <tt>--stdio</tt> ao comando <tt>coffee</tt>, para uso
+      com o <i>pipe</i>.
     </p>
 
 
     <p>
       <b class="header" style="margin-top: 20px;">0.5.1
-        <span class="timestamp"> &ndash; <small>Feb 24, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>24 fev 2010</small></span>
       </b>
-      Improvements to null soaking with the existential operator, including
-      soaks on indexed properties. Added conditions to <tt>while</tt> loops,
-      so you can use them as filters with <tt>when</tt>, in the same manner as
-      comprehensions.
+      Melhorias na absorção de referências nulas (<i>null soaking</i>) com o
+      operador existencial, incluindo a absorção em propriedades indexadas.
+      Adicionado condições aos <i>loops</i> <tt>while</tt>, o que permite agora
+      usá-los como filtros com <tt>when</tt>, da mesma forma que
+      <i>comprehensions</i>.
     </p>
 
     <p>
@@ -2746,187 +2754,198 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
 
     <p>
       <b class="header" style="margin-top: 20px;">0.3.2
-        <span class="timestamp"> &ndash; <small>Feb 8, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>8 fev 2010</small></span>
       </b>
-      <tt>@property</tt> is now a shorthand for <tt>this.property</tt>.<br />
-      Switched the default JavaScript engine from Narwhal to Node.js. Pass
-      the <tt>--narwhal</tt> flag if you'd like to continue using it.
+      <tt>@propriedade</tt> agora serve como um atalho para
+      <tt>this.propriedade</tt>.
+      <br />
+      Node.js agora é o <i>engine</i> padrão. Caso queira continuar a usar
+      a antiga <i>engine</i>, Narwhal, passe a <i>flag</i> <tt>--narwhal</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.3.0
-        <span class="timestamp"> &ndash; <small>Jan 26, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>26 jan 2010</small></span>
       </b>
-      CoffeeScript 0.3 includes major syntax changes:
+      CoffeeScript 0.3 inclui grandes mudanças na sintaxe:
       <br />
-      The function symbol was changed to
-      <tt>-></tt>, and the bound function symbol is now <tt>=></tt>.
+      O símbolo para função foi modificado para <tt>-></tt>, e o símbolo para
+      <i>bound function</i> agora é <tt>=></tt>.
       <br />
-      Parameter lists in function definitions must now be wrapped in parentheses.
+      Listas de parâmetros nas definições de funções agora devem estar entre
+      parênteses.
       <br />
-      Added property soaking, with the <tt>?.</tt> operator.
+      Adicionado <i>property soaking</i>, com o operador <tt>?.</tt>.
       <br />
-      Made parentheses optional, when invoking functions with arguments.
+      Parênteses agora são opcionais quando funções com argumentos são invocadas.
       <br />
-      Removed the obsolete block literal syntax.
+      Removida a sintaxe obsoleta de bloco literal.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.6
-        <span class="timestamp"> &ndash; <small>Jan 17, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>17 jan 2010</small></span>
       </b>
-      Added Python-style chained comparisons, the conditional existence
-      operator <tt>?=</tt>, and some examples from <i>Beautiful Code</i>.
-      Bugfixes relating to statement-to-expression conversion, arguments-to-array
-      conversion, and the TextMate syntax highlighter.
+      Adicionado comparações em cadeia como em Python, o operador de existência
+      <tt>?=</tt>, e alguns exemplos do <i>Beautiful Code</i>.
+      Correções de <i>bugs</i> relacionados a conversão de declarações para
+      expressões, conversão de argumentos para array, e o <i>syntax highlighter</i>
+      para TextMate.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.5
-        <span class="timestamp"> &ndash; <small>Jan 13, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>13 jan 2010</small></span>
       </b>
-      The conditions in switch statements can now take multiple values at once &mdash;
-      If any of them are true, the case will run. Added the long arrow <tt>==></tt>,
-      which defines and immediately binds a function to <tt>this</tt>. While loops can
-      now be used as expressions, in the same way that comprehensions can. Splats
-      can be used within pattern matches to soak up the rest of an array.
+      As condições dos <tt>switchs</tt> agora aceitam vários valores ao mesmo
+      tempo &mdash; Se algum deles for verdadeiro, o <i>case</i> irá rodar.
+      Adicionado a senta longa <tt>==></tt>, que define e imediatamente vincula
+      (<i>bind</i>) uma função ao <tt>this</tt>. Loops <i>while</i> agora podem
+      ser usados como expressões, do mesmo modo como <i>comprehensions</i> podem.
+      Splats pode ser usadas dentro de padrões de combinação para capturar o
+      resto de um <i>array</i>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.4
-        <span class="timestamp"> &ndash; <small>Jan 12, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>12 jan 2010</small></span>
       </b>
-      Added ECMAScript Harmony style destructuring assignment, for dealing with
-      extracting values from nested arrays and objects. Added indentation-sensitive
-      heredocs for nicely formatted strings or chunks of code.
+      Adicionada a atribuição de desestruturação seguindo a proposta do
+      ECMAScript Harmony, para tratar da extração de valores de <i>arrays</i>
+      e objetos aninhados. Adicionado <i>heredocs</i> sensíveis a identação
+      (<i>indentation-sensitive</i>) para uma melhor formatação de <i>strings</i>
+      ou pedaços de código.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.3
         <span class="timestamp"> &ndash; <small>Jan 11, 2010</small></span>
       </b>
-      Axed the unsatisfactory <tt>ino</tt> keyword, replacing it with <tt>of</tt> for
-      object comprehensions. They now look like: <tt>for prop, value of object</tt>.
+      Removida a palavra-chave <tt>ino</tt>, sendo substituída por <tt>of</tt>
+      para <i>object comprehensions</i>. Agora elas funcionam
+      da seguinte forma: <tt>for prop, value of object</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.2
-        <span class="timestamp"> &ndash; <small>Jan 10, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>10 de jan 2010</small></span>
       </b>
-      When performing a comprehension over an object, use <tt>ino</tt>, instead
-      of <tt>in</tt>, which helps us generate smaller, more efficient code at
-      compile time.
-      <br />
-      Added <tt>::</tt> as a shorthand for saying <tt>.prototype.</tt>
-      <br />
-      The "splat" symbol has been changed from a prefix asterisk <tt>*</tt>, to
-      a postfix ellipsis <tt>...</tt>
-      <br />
-      Added JavaScript's <tt>in</tt> operator,
-      empty <tt>return</tt> statements, and empty <tt>while</tt> loops.
-      <br />
-      Constructor functions that start with capital letters now include a
-      safety check to make sure that the new instance of the object is returned.
-      <br />
-      The <tt>extends</tt> keyword now functions identically to <tt>goog.inherits</tt>
-      in Google's Closure Library.
+      Quando executar uma <i>comprehension</i> sobre um objeto, usa <tt>ino</tt>,
+      ao invés de <tt>in</tt>, o que ajuda a gerar um código menor e mais
+      eficiente durante a compilação.
+      Adicionado <tt>::</tt> como um atalho para <tt>.prototype.</tt>
+      O símbolo para "splat" foi modificado de um asterisco <tt>*</tt> prefixado
+      para reticências <tt>...</tt> sufixadas.
+      Adicionado o operador <tt>in</tt> de JavaScript, decalarações <tt>return</tt>
+      vazias, <i>loops</i> <tt>while</tt> vazios.
+      Funções contrutoras que iniciam com uma letra maiúscula agora incluem
+      uma checagem de segurança para assegurar que a nova instância do objeto
+      seja retornada.
+      A palavra-chave <tt>extends</tt> agora funciona de forma idêntica a
+      <tt>goog.inherits</tt> da Google Closure Library.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.1
-        <span class="timestamp"> &ndash; <small>Jan 5, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>5 jan 2010</small></span>
       </b>
-      Arguments objects are now converted into real arrays when referenced.
+      Objetos passados como argumentos agora são convertidos em <i>arrays</i>
+      reais quando referenciados.
+
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.2.0
-        <span class="timestamp"> &ndash; <small>Jan 5, 2010</small></span>
+        <span class="timestamp"> &ndash; <small>5 jan 2010</small></span>
       </b>
-      Major release. Significant whitespace. Better statement-to-expression
-      conversion. Splats. Splice literals. Object comprehensions. Blocks.
-      The existential operator. Many thanks to all the folks who posted issues,
-      with special thanks to
-      <a href="http://github.com/liamoc">Liam O'Connor-Davis</a> for whitespace
-      and expression help.
+      Grande lançamento (<i>major release</i>). Espaço em branco significativo.
+      Melhor conversão de declaração para expressão. Splats. Literais splice.
+      <i>Comprehensions</i> de objetos. Blocos. Operador existencial. Muito
+      obrigado a todos que postaram <i>issues</i>, com um agradecimento especial
+      para <a href="http://github.com/liamoc">Liam O'Connor-Davis</a> pela ajuda
+      com espaço em branco e expressões.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.6
-        <span class="timestamp"> &ndash; <small>Dec 27, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>27 dez 2009</small></span>
       </b>
-      Bugfix for running <tt>coffee --interactive</tt> and <tt>--run</tt>
-      from outside of the CoffeeScript directory. Bugfix for nested
-      function/if-statements.
+      Correção de <i>bug</i> para rodar <tt>coffee --interactive</tt> e
+      <tt>--run</tt> fora do diretório CoffeeScript. Correção de bug para funções
+      e <i>if</i> aninhados.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.5
-        <span class="timestamp"> &ndash; <small>Dec 26, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>26 dez 2009</small></span>
       </b>
-      Array slice literals and array comprehensions can now both take Ruby-style
-      ranges to specify the start and end. JavaScript variable declaration is
-      now pushed up to the top of the scope, making all assignment statements into
-      expressions. You can use <tt>\</tt> to escape newlines.
-      The <tt>coffee-script</tt> command is now called <tt>coffee</tt>.
+      <i>Array slice</i> literais e <i>array comprehensions</i> podem ambos
+      utilizar uma sintaxe no estilo Ruby para especificar o começo e fim
+      de um <i>range</i>. Declaração de variáveis JavaScript agora são enviadas
+      para o topo do escopo, fazendo com que todas as declarações de atribuição
+      fiquem dentro de expressões. É possível usar <tt>\</tt> para "escapar"
+      (<i>escape</i>) novas linhas.
+      O comando <tt>coffee-script</tt> agora é chamado <tt>coffee</tt>.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.4
-        <span class="timestamp"> &ndash; <small>Dec 25, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>25 dez 2009</small></span>
       </b>
-      The official CoffeeScript extension is now <tt>.coffee</tt> instead of
-      <tt>.cs</tt>, which properly belongs to
+      A extensão oficial do CoffeScript agora é <tt>.coffee</tt> ao contrário
+      de <tt>.cs</tt>, que pertence a
       <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>.
-      Due to popular demand, you can now also use <tt>=</tt> to assign. Unlike
-      JavaScript, <tt>=</tt> can also be used within object literals, interchangeably
-      with <tt>:</tt>. Made a grammatical fix for chained function calls
-      like <tt>func(1)(2)(3)(4)</tt>. Inheritance and super no longer use
-      <tt>__proto__</tt>, so they should be IE-compatible now.
+      Devido a vários pedidos, agora é possível usar <tt>=</tt> para atribuição.
+      Diferente de JavaScript, <tt>=</tt> pode também ser usado dentro de objetos
+      literais, da mesma forma que <tt>:</tt>. Feita uma correção gramatical
+      para chamadas de funções em cadeia (<i>chain calls</i>) como
+      <tt>func(1)(2)(3)(4)</tt>. Herança e a palavra-chave <tt>super</tt> não
+      utilizam mais <tt>__proto__</tt>, fazendo com sejam compatíveis com o IE.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.3
-        <span class="timestamp"> &ndash; <small>Dec 25, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>25 dez 2009</small></span>
       </b>
-      The <tt>coffee</tt> command now includes <tt>--interactive</tt>,
-      which launches an interactive CoffeeScript session, and <tt>--run</tt>,
-      which directly compiles and executes a script. Both options depend on a
-      working installation of Narwhal.
-      The <tt>aint</tt> keyword has been replaced by <tt>isnt</tt>, which goes
-      together a little smoother with <tt>is</tt>.
-      Quoted strings are now allowed as identifiers within object literals: eg.
-      <tt>{"5+5": 10}</tt>.
-      All assignment operators now use a colon: <tt>+:</tt>, <tt>-:</tt>,
-      <tt>*:</tt>, etc.
+      O comando <tt>coffee</tt> agora inclui a opção
+      <tt>--interactive</tt>, que chama uma sessão inteterativa do CoffeeScript,
+      e <tt>--run</tt>, que compila e executa um <i>script</i>. Ambas as opções
+      dependem da instalação do Narwhal.
+      A palavra-chave <tt>aint</tt> foi trocada por <tt>isnt</tt>, o que faz
+      mais sentindo junto com <tt>is</tt>.
+      <i>Strings</i> com aspas agora são permitidas como identificadores dentro
+      de objetos literais: ex. <tt>{"5+5": 10}</tt>.
+      Todos os operadores de atribuição agora usam dois pontos: <tt>+:</tt>,
+      <tt>-:</tt>, <tt>*:</tt>, etc.
+
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.2
-        <span class="timestamp"> &ndash; <small>Dec 24, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>24 dez 2009</small></span>
       </b>
-      Fixed a bug with calling <tt>super()</tt> through more than one level of
-      inheritance, with the re-addition of the <tt>extends</tt> keyword.
-      Added experimental <a href="http://narwhaljs.org/">Narwhal</a>
-      support (as a Tusk package), contributed by
-      <a href="http://tlrobinson.net/">Tom Robinson</a>, including
-      <b>bin/cs</b> as a CoffeeScript REPL and interpreter.
-      New <tt>--no-wrap</tt> option to suppress the safety function
-      wrapper.
+      Corrigido um bug quando <tt>super()</tt> era chamado por mais de um nível
+      de herança, com a re-adição da palavra-chave <tt>extends</tt>.
+      Adicionado suporte experimental a
+      <a href="http://narwhaljs.org/">Narwhal</a> (como um pacote Tusk),
+      contribuído por <a href="http://tlrobinson.net/">Tom Robinson</a>,
+      incluindo <b>bin/cs</b> como um REPL de CoffeeScript e interpretador.
+      Nova opção <tt>--no-wrap</tt> para suprimir o <i>wrapper</i> da função
+      de segurança.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.1
-        <span class="timestamp"> &ndash; <small>Dec 24, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>24 dez 2009</small></span>
       </b>
-      Added <tt>instanceof</tt> and <tt>typeof</tt> as operators.
+      Adicionado <tt>instanceof</tt> e <tt>typeof</tt> como operadores.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">0.1.0
-        <span class="timestamp"> &ndash; <small>Dec 24, 2009</small></span>
+        <span class="timestamp"> &ndash; <small>24 dez  2009</small></span>
       </b>
-      Initial CoffeeScript release.
+      Primeira versão do CoffeeScript liberada.
     </p>
 
   </div>
