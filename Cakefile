@@ -113,8 +113,8 @@ task 'build:browser', 'rebuild the merged script for inclusion in the browser', 
 
       if (typeof define === 'function' && define.amd) {
         define(function() { return CoffeeScript; });
-      } else { 
-        root.CoffeeScript = CoffeeScript; 
+      } else {
+        root.CoffeeScript = CoffeeScript;
       }
     }(this));
   """
@@ -245,3 +245,73 @@ task 'test:browser', 'run the test suite against the merged browser script', ->
   global.testingBrowser = yes
   (-> eval source).call result
   runTests result.CoffeeScript
+
+# tasks de deployment do loop infinito ------------------------------------------------------------------
+
+# módulos
+{spawn, exec} = require('child_process')
+colors = require('colors')
+
+# task 'deploy'
+task 'deploy', 'Envia o diff do blog para o server', () ->
+
+  # minifify no código antes de enviar
+  invoke 'minify'
+
+  # configurações de deploy do rsync
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
+  user = "loopinfinito"
+  remote_root = "~/coffeescript.loopinfinito.com.br/"
+  local_root = "."
+
+  # executa o deploy
+  console.log 'Upando arquivos...'.grey
+  rsync = spawn "rsync", [
+    "-avz"
+    "--exclude=.git"
+    "--exclude=.DS_Store"
+    "--exclude=.gitignore"
+    "--exclude=.npmignore"
+    "--exclude=bin"
+    "--exclude=documentation/coffee"
+    "--exclude=documentation/js"
+    "--exclude=documentation/index.html.erb"
+    "--exclude=examples"
+    "--exclude=extras/jsl.conf"
+    "--exclude=lib"
+    "--exclude=node_modules"
+    "--exclude=src"
+    "--exclude=test"
+    "--exclude=tools"
+    "--exclude=Cakefile"
+    "--exclude=CNAME"
+    "--exclude=coffeescript.yaml"
+    "--exclude=package.json"
+    "--exclude=Rakefile"
+    "--stats"
+    "-e"
+    "ssh"
+    "#{__dirname}/#{local_root}"
+    "#{user}@bugsy.dreamhost.com:#{remote_root}"
+  ]
+
+  # evento disparado quando a tarefa imprime algo no stdout
+  rsync.stdout.on 'data', (data) ->
+    # console.log data.toString().trim()
+
+  # evento disparado caso ocorra um erro na tarefa
+  rsync.stderr.on 'data', (data) ->
+    console.log "Erro no deploy: #{data}".red
+
+  # evento disparado quando a tarefa é terminada
+  rsync.on 'exit', (code) ->
+    console.log "coffeescript.com.br atualizado".green
+
+# task de minify
+task 'minify', 'Minify nos arquivos HTML, CSS e JS', () ->
+  console.log 'Minifying...'.grey
+  # html minify
+  exec 'java -jar tools/htmlcompressor-1.5.2.jar --compress-css --compress-js --remove-intertag-spaces -r -o . .'
+  # css minify
+  exec "java -jar tools/yuicompressor-2.4.7.jar -o ./documentation/css/docs.css ./documentation/css/docs.css"
+  exec "java -jar tools/yuicompressor-2.4.7.jar -o ./documentation/css/idle.css ./documentation/css/idle.css"
