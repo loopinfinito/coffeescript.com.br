@@ -2320,7 +2320,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
           para discutir a respeito.
         </li>
         <li>
-          Dentro de uma funções aninhada dentro de um método de instância, agora
+          Dentro de uma função aninhada dentro de um método de instância, agora
           é possível chamar <tt>super</tt> de forma mais confiável (percorre de
           forma recursiva para cima).
         </li>
@@ -2334,7 +2334,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
         </li>
         <li>
           Correções no modo restrito de tempo do compilador que proibía
-          literais octal.
+          literais octais.
         </li>
       </ul>
     </p>
@@ -2347,7 +2347,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <ul>
         <li>
           CoffeeScript agora mostra todos os erros de sintaxe do <b>Strict Mode</b>
-          de JavaScript no momento da compilação. Entre os erros mostrados estão
+          de JavaScript no momento da compilação. Entre os erros mostrados estão a
           forma antiga de definição de octais literais, nomes de propriedades
           duplicadas em objetos literais, parâmetros duplicados em definições
           de funções, deleção de variáveis nuas (<i>naked variables</i>), setar
@@ -2356,7 +2356,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
           <a href="https://github.com/jashkenas/coffee-script/issues/1547">#1547</a>.
         </li>
         <li>
-          REPL agora possui um mode <i>multi-line</i> para entrada de blocos
+          REPL agora possui um modo <i>multi-line</i> para entrada de blocos
           de código maiores. Útil quando estamos copiando e colando exemplos
           dentro do REPL. Entre no modo <i>multi-line</i> com <tt>Ctrl-V</tt>.
           Agora também é possível dar entrada no REPL através do <i>pipe</i>.
@@ -2375,9 +2375,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
           <tt>do (x = 1, y = 2) -> ...</tt>
         </li>
         <li>
-          Loop indices are now mutable within a loop iteration, and immutable
-          between them.
-          Índices dos <i>loops</i> agora são mutáveis dentro das iterações,
+          Índices de <i>loops</i> agora são mutáveis dentro das iterações,
           e imutáveis entre elas.
         </li>
         <li>
@@ -2390,7 +2388,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
           disparar um <i>beep</i> por padrão sempre que encontrar um erro de
           sintaxe em um dos arquivos que estão sendo observados. Agora diretórios
           escondidos são ignorados por padrão quando observando arquivos de forma
-          revursiva.
+          recursiva.
         </li>
       </ul>
     </p>
@@ -2416,7 +2414,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
         <li>
           Corrigidos vários pequenos <i>bugs</i> da versão 1.1.3 relacionados com
           operadores no fim de linhas e linhas não finalizadas, e outros <i>bugs</i>
-          maiores que causavam com que com funções vinculadas (<i>bound</i>) <b>dentro</b>
+          maiores que causavam com que funções vinculadas (<i>bound</i>) <b>dentro</b>
           de funções de classes vinculadas (<i>bound</i>) tivessem o valor
           incorreto de <tt>this</tt>.
         </li>
@@ -2430,7 +2428,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </b>
       <ul>
         <li>
-          JavaScript compilado do CoffeeScript agora tenta deixar a saída espaçada
+          O JavaScript compilado do CoffeeScript agora tenta deixar a saída espaçada
           e manter o código legível, como você pode ver nos exemplos nesta página.
         </li>
         <li>
@@ -2455,13 +2453,13 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
         </li>
         <li>
           A opção <tt>coffee --watch</tt> agora só funciona no Node.js 0.6.0 ou
-          mais novo, mas agora funciona de forma correta no Windows.
+          mais recente, mas agora funciona de forma correta no Windows.
         </li>
         <li>
           Várias pequenas correções de bugs feitas por
           <b><a href="https://github.com/michaelficarra">@michaelficarra</a></b>,
           <b><a href="https://github.com/geraldalewis">@geraldalewis</a></b>,
-          <b><a href="https://github.com/satyr">@satyr</a></b>, and
+          <b><a href="https://github.com/satyr">@satyr</a></b>, e
           <b><a href="https://github.com/trevorburnham">@trevorburnham</a></b>.
         </li>
       </ul>
@@ -2477,8 +2475,8 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       um bloco try/catch, argumentos variádicos vazando para o escopo local,
       número de linha de erro de sintaxe seguido de <i>heregex</i>, acesso a
       propriedade em números literais entre parênteses, vincula métodos de
-      classes e super com nomes reservados, reformulação do REPL, ponto e
-      vírgula consecutivos compilados, comentários em bloco de objetos chamados
+      classes e super com nomes reservados, reformulação do REPL, ponto-e-vírgula
+      consecutivos compilados, comentários em bloco de objetos chamados
       de forma implícita e um <i>bug</i> no Chrome.
     </p>
 
@@ -2503,31 +2501,23 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       Correção na análise léxica de divisão composta <tt>=/</tt> como regex.
       Todas as <i>tags</i> <tt>text/coffeescript</tt> agora devem ser executadas
       na ordem que são incluídas.
-      Corrigida um problema ao estender subclasses usando funções construtoras
+      Corrigido um problema ao estender subclasses usando funções construtoras
       externas.
-      Corrigido problema de velcidade exponencial com chamadas de funções em
+      Corrigido problema de velocidade exponencial com chamadas de funções em
       cadeias muito grandes.
       Globais não vazam mais no REPL CoffeeScript.
-      Parâmetros <i>splatted</i> são declarados local para a função.
+      Parâmetros <i>splatted</i> são declarados localmente para a função.
     </p>
 
     <p>
       <b class="header" style="margin-top: 20px;">1.0.1
         <span class="timestamp"> &ndash; <small>31 jan 2011</small></span>
       </b>
-      Fixed a lexer bug with Unicode identifiers. Updated REPL for compatibility
-      with Node.js 0.3.7. Fixed requiring relative paths in the REPL. Trailing
-      <tt>return</tt> and <tt>return undefined</tt> are now optimized away.
-      Stopped requiring the core Node.js <tt>"util"</tt> module for
-      back-compatibility with Node.js 0.2.5. Fixed a case where a
-      conditional <tt>return</tt> would cause fallthrough in a <tt>switch</tt>
-      statement. Optimized empty objects in destructuring assignment.
-
-      Corrigido <i>bug</i> no <i>lexer</i> com identificadores Unicode.
+      Corrigido <i>bug</i> no analizador léxico com identificadores Unicode.
       REPL atualizado para compatibilidade com Node.js 0.3.7.
       Corrigido <i>bug</i> na requisição de caminhos relativos no REPL.
       <tt>return</tt> e <tt>return undefined</tt> finais agora são otimizados.
-      O módulo <tt>"util</tt> agora não é mais usado devido a compatibilidade com
+      O módulo <tt>util</tt> agora não é mais usado devido a compatibilidade com
       Node.js 0.2.5.
       Corrigido um caso onde um <tt>return</tt> condicional poderia disparar
       o <i>case</i> padrão.
@@ -2538,8 +2528,8 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <b class="header" style="margin-top: 20px;">1.0.0
         <span class="timestamp"> &ndash; <small>24 dez 2010</small></span>
       </b>
-      <i>Loops</i> CoffeeScript não tentam mais preservar o escopo do bloco quando
-      funções estão sendo geradas dentro do corpo do <i>loop</i>.
+      Laços (<em>loops</em>) CoffeeScript não tentam mais preservar o escopo do bloco quando
+      funções estão sendo geradas dentro do corpo do laço.
       Caso necessário, você pode usar a palavra-chave <tt>do</tt> para criar um
       <i>wrapper</i> de maneira fácil.
       Adicionada a <i>flag</i> <tt>--nodejs</tt> para passar opções diretamente
@@ -2565,7 +2555,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       Corrige contexto de execução para funções <i>splats</i> nuas
       (<i>naked splatted functions</i>).
       Correção de bug para inversão de comparação em cadeia.
-      Instanciação de classes em cadeia agora funciona de forma correta com
+      Instanciação de classes em cadeia agora funcionam de forma correta com
       <i>splats</i>.
     </p>
 
@@ -2604,7 +2594,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       eles antigamente compilavam para if/else encadeados para compatibilidade com
       a versão 1.3 do JavaScript.
       Absorver a invocação de uma função agora é suportado.
-      Usuários do editro RubyMine agora podem utilizar a <i>flag</i> <tt>--watch</tt>.
+      Usuários do editor RubyMine agora podem utilizar a <i>flag</i> <tt>--watch</tt>.
     </p>
 
     <p>
@@ -2614,13 +2604,13 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       Especificar o começo e fim de um <i>range</i> literal agora é opcional, ex.
       <tt>array[3..]</tt>.
       Agora é possível usar <tt>a not instance of</tt>.
-      Importante correção de bug com identação aninhada significante e
+      Importante correção de bug com indentação aninhada significante e
       não-significante (Issue #637).
       Adicionado a <i>flag</i> <tt>--require</tt> que permite que você ligue com
       o comando <tt>coffee</tt>.
       Adicionado um arquivo <tt>jsl.conf</tt> customizado para a sua instalação
       preferida de JavaScriptLint.
-      Maior velocidade no tempo de compilação da gramátia Jison.
+      Maior velocidade no tempo de compilação da gramática Jison.
       Comentários em bloco agora podem ser usados com uma sintaxe amigável a
       <i>minifiers</i> JavaScript.
       Adicionados operadores de atribuição compostos <i>bitwise</i>.
@@ -2633,7 +2623,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <b class="header" style="margin-top: 20px;">0.9.1
         <span class="timestamp"> &ndash; <small>11 ago 2010</small></span>
       </b>
-      Correções de <i>bug</i> para <b>0.9.1</b>. Melhora a anipulação de objetos implícitos
+      Correções de <i>bug</i> para <b>0.9.1</b>. Melhora a manipulação de objetos implícitos
       mistos, chamadas implícitas a funções, e identação implícita.
       Interpolação de <i>strings</i> e <i>regex</i> agora é feita apenas com
       <tt>#{ ... }</tt>, como em Ruby.
@@ -2645,17 +2635,17 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </b>
       As série de versões <b>0.9</b> são candidatas para o lançamento da versão
       <b>1.0</b>.
-      A versão <b>0.9</b> introduz várias mudanças que quebra a compatibilidade
+      A versão <b>0.9</b> introduz várias mudanças que quebram a compatibilidade
       com versões anteriores: atribuições agora usam <tt>=</tt>, e objetos
       literais usam <tt>:</tt>, como em JavaScript. Isto permite termos objetos
       literais implícitos, e definições de objetos no estilo YAML. Meia
       atribuições (<i>half assignments</i>) foram removidas, devido a <tt>+=</tt>,
       <tt>or=</tt>, e outros.
-      Interpolação agora usa <tt>#</tt>ao invés de <tt>$</tt> &mdash; pois o sinal
+      Interpolação agora usa <tt>#</tt> ao invés de <tt>$</tt> &mdash; pois o sinal
       de dólar pode fazer parte de um indentificador JS válido.
       <i>Range comprehensions</i> ao contrário são seguras novamente, e otimizadas
-      para <i>loops for</i> quando criadas com números inteiros como final do
-      <i>loop</i>.
+      para laços <i>for</i> quando criadas com números inteiros como final do
+      laço.
       Um forma sem proteção e rápida de <i>object comprehension</i> foi adicionada:
       <tt>for all key, value of object</tt>.
       O uso da palavra-chave <tt>super</tt> sem argumentos agora redireciona todos
@@ -2668,7 +2658,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <tt>@variables</tt> agora podem ser usadas nas listas de parâmetros, com o
       parâmetro sendo automaticamente setado como uma propriedade do objeto
       &mdash; útil em construtores e <i>setter functions</i>.
-      Contrutores agora pode receber <i>splats</i>.
+      Contrutores agora podem receber <i>splats</i>.
     </p>
 
     <p>
@@ -2695,17 +2685,17 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <b class="header" style="margin-top: 20px;">0.7.0
         <span class="timestamp"> &ndash; <small>28 jun 2010</small></span>
       </b>
-      Estilo oficial de variáveis no CoffeeScript agora é camelCase, assim como
+      O estilo oficial de variáveis no CoffeeScript agora é camelCase, assim como
       em JavaScript.
-      Palavras reservadas agora pode ser chaves de objetos, e serão
+      Palavras reservadas agora podem ser chaves de objetos, e serão
       automaticamente postas entre aspas para você.
       <i>Comprehensions</i> de <i>range</i> agora geram um código mais limpo, mas
       você tem de especificar <tt>by -1</tt> se deseja iterar ao contrário.
-      Relatório de erros de sintae foram bastante melhorados desde a última versão.
+      Relatório de erros de sintaxe foram bastante melhorados desde a última versão.
       Executando <tt>coffee</tt> sem argumentos agora chama o REPL, com suporte a
       <i>Readline</i>.
       O operador de <i>bind</i> <tt>&lt;-</tt> foi removido do CoffeeScript.
-      A palavra-chave <tt>loop</tt> foi adicionada, o que é equivalente ao <i>loop</i>
+      A palavra-chave <tt>loop</tt> foi adicionada, o que é equivalente ao laço
       <tt>while true</tt>.
       <i>Comprehensions</i> que possuem <i>closures</i> agora vão fechar sobre
       suas variáveis, como na semântica de um <tt>forEach</tt>.
@@ -2723,15 +2713,15 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       um diretório cheio de scripts.
       Corrigido duas omissões que impediam o compilador CoffeeScript de rodar dentro
       do Internet Explorer.
-      Existe agora uma sintaxe para comentários em bloco, similar a já existente
-      sintaxe para heredocs.
+      Existe agora uma sintaxe para comentários em bloco, similar a sintaxe já existente
+      para <i>heredocs</i>.
       <i>Pattern matching</i> ao estilo ECMA Harmony DRY (Don't Repeat Yourself)
       é agora suportado, onde o nome da propriedade é o mesmo nome do valor:
       <tt>{name, length}: func</tt>.
       <i>Pattern matching</i> agora é permitido dentro de variáveis
       <i>comprehension</i>. <tt>unless</tt> é agora suportado como um bloco.
-      <i>Loops</i> <tt>until</tt> foram adicionados, como o inverso dos
-      <i>loops</i> <tt>while</tt>.
+      Laços <tt>until</tt> foram adicionados, como o inverso dos
+      laços <tt>while</tt>.
       Declarações <tt>switch</tt> agora são permitidas sem o objeto de cláusulas.
       Compatível com Node.js <b>v.0.1.95</b>.
     </p>
@@ -2749,7 +2739,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </b>
       Vírgulas no fim das linhas agora são permitidas, a-la Python.
       Propriedades estáticas agora podem ser atribuídas dentro das definições
-      de classes, usando a notação <tt>@property</tt>.
+      de classes, usando a notação <tt>@propriedade</tt>.
     </p>
 
     <p>
@@ -2760,10 +2750,10 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <i>heredocs</i>, assim como em <i>strings</i>.
       Adicionado o operador <tt>&lt;-</tt> para <i>binding</i>.
       Atribuição de meia-expressões agora são permitidas ao invés do <tt>||=</tt>.
-      O objeto arguments não é mais convertido automaticamente em <i>array</i>.
+      O objeto <i>arguments</i> não é mais convertido automaticamente em <i>array</i>.
       Após o <i>require</i>, Node.js pode diretamente carregar arquivos
       <tt>.coffee</tt>, graças a <b>registerExtension</b>.
-      <i>Splats</i> múltiplos agoram podem ser usados nas chamadas de funções,
+      <i>Splats</i> múltiplos agora podem ser usados nas chamadas de funções,
       <i>arrays</i> e em combinação de padrões (<i>pattern matching</i>).
     </p>
 
@@ -2785,7 +2775,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       Correção de bug que corrige as constantes globais <tt>__filename</tt> e
       <tt>__dirname</tt> do Node.js.
       Pequenas alterações para uma análise sintática mais flexível de funções
-      aninhadas e comentários mal identados.
+      aninhadas e comentários mal indentados.
       Atualizações para a última API do Node.js.
     </p>
 
@@ -2796,7 +2786,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       CoffeeScript agora tem uma sintaxe para definição de classes. Muitos dos
       componentes do <i>core</i> (Node, Lexer, Rewriter, Scope, Optparse) estão
       a usando.
-      Cakefiles pode usar <tt>optparse.coffee</tt> para definir opções para
+      <i>Cakefiles</i> podem usar <tt>optparse.coffee</tt> para definir opções para
       <i>tasks</i>.
       <tt>--run</tt> agora é a <i>flag</i> padrão para o comando <tt>coffee</tt>,
       use <tt>--compile</tt> para salvar JavaScripts.
@@ -2821,7 +2811,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </b>
       Melhorias na absorção de referências nulas (<i>null soaking</i>) com o
       operador existencial, incluindo a absorção em propriedades indexadas.
-      Adicionado condições aos <i>loops</i> <tt>while</tt>, o que permite agora
+      Adicionado condições aos laços <tt>while</tt>, o que permite agora
       usá-los como filtros com <tt>when</tt>, da mesma forma que
       <i>comprehensions</i>.
     </p>
@@ -2872,7 +2862,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       Adicionado comparações em cadeia como em Python, o operador de existência
       <tt>?=</tt>, e alguns exemplos do <i>Beautiful Code</i>.
       Correções de <i>bugs</i> relacionados a conversão de declarações para
-      expressões, conversão de argumentos para array, e o <i>syntax highlighter</i>
+      expressões, conversão de argumentos para <i>array</i>, e o <i>syntax highlighter</i>
       para TextMate.
     </p>
 
@@ -2883,9 +2873,9 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       As condições dos <tt>switchs</tt> agora aceitam vários valores ao mesmo
       tempo &mdash; Se algum deles for verdadeiro, o <i>case</i> irá rodar.
       Adicionado a senta longa <tt>==></tt>, que define e imediatamente vincula
-      (<i>bind</i>) uma função ao <tt>this</tt>. Loops <i>while</i> agora podem
+      (<i>bind</i>) uma função ao <tt>this</tt>. Laços <i>while</i> agora podem
       ser usados como expressões, do mesmo modo como <i>comprehensions</i> podem.
-      Splats pode ser usadas dentro de padrões de combinação para capturar o
+      <i>Splats</i> podem ser usadas dentro de padrões de combinação para capturar o
       resto de um <i>array</i>.
     </p>
 
@@ -2895,7 +2885,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       </b>
       Adicionada a atribuição de desestruturação seguindo a proposta do
       ECMAScript Harmony, para tratar da extração de valores de <i>arrays</i>
-      e objetos aninhados. Adicionado <i>heredocs</i> sensíveis a identação
+      e objetos aninhados. Adicionado <i>heredocs</i> sensíveis a indentação
       (<i>indentation-sensitive</i>) para uma melhor formatação de <i>strings</i>
       ou pedaços de código.
     </p>
@@ -2913,14 +2903,14 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <b class="header" style="margin-top: 20px;">0.2.2
         <span class="timestamp"> &ndash; <small>10 de jan 2010</small></span>
       </b>
-      Quando executar uma <i>comprehension</i> sobre um objeto, usa <tt>ino</tt>,
+      Quando executar uma <i>comprehension</i> sobre um objeto, usar <tt>ino</tt>,
       ao invés de <tt>in</tt>, o que ajuda a gerar um código menor e mais
       eficiente durante a compilação.
       Adicionado <tt>::</tt> como um atalho para <tt>.prototype.</tt>
       O símbolo para "splat" foi modificado de um asterisco <tt>*</tt> prefixado
-      para reticências <tt>...</tt> sufixadas.
+      para reticências <tt>...</tt> com sufixos.
       Adicionado o operador <tt>in</tt> de JavaScript, decalarações <tt>return</tt>
-      vazias, <i>loops</i> <tt>while</tt> vazios.
+      vazias, laços <tt>while</tt> vazios.
       Funções contrutoras que iniciam com uma letra maiúscula agora incluem
       uma checagem de segurança para assegurar que a nova instância do objeto
       seja retornada.
@@ -2942,7 +2932,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
         <span class="timestamp"> &ndash; <small>5 jan 2010</small></span>
       </b>
       Grande lançamento (<i>major release</i>). Espaço em branco significativo.
-      Melhor conversão de declaração para expressão. Splats. Literais splice.
+      Melhor conversão de declaração para expressão. <i>Splats</i>. Literais <i>splice</i>.
       <i>Comprehensions</i> de objetos. Blocos. Operador existencial. Muito
       obrigado a todos que postaram <i>issues</i>, com um agradecimento especial
       para <a href="http://github.com/liamoc">Liam O'Connor-Davis</a> pela ajuda
@@ -2962,7 +2952,7 @@ task(<span class="String"><span class="String">'</span>build:parser<span class="
       <b class="header" style="margin-top: 20px;">0.1.5
         <span class="timestamp"> &ndash; <small>26 dez 2009</small></span>
       </b>
-      <i>Array slice</i> literais e <i>array comprehensions</i> podem ambos
+      Literais <i>Array slice</i> e <i>array comprehensions</i> podem ambos
       utilizar uma sintaxe no estilo Ruby para especificar o começo e fim
       de um <i>range</i>. Declaração de variáveis JavaScript agora são enviadas
       para o topo do escopo, fazendo com que todas as declarações de atribuição
