@@ -35,7 +35,6 @@
   Compile um script:
   coffee -c /path/to/script.coffee
 
-  For documentation, usage, and examples, see:
   Para documentação, uso e exemplos:
   http://coffeescript.com.br/
 
